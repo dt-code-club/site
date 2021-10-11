@@ -10,43 +10,46 @@
     <header id="header">
         <div id="header-logo">
             <a href="/home">
-                <img src="/img/logo.jpg" alt="DT Code Club logo" height="80px">
+                <img src="/img/logo.jpg" alt="DT Code Club logo" height="75px">
             </a>
         </div>
-        <div id="header-main">
-            <div id="header-wordmark">
-                <a id="header-title" href="/home">
-                    <h1>David Thompson Code Club</h1>
-                </a>
-                <blockquote id="header-quote">
-                    Give a man a program, frustrate him for a day.
-                    Teach a man to program, frustrate him for a lifetime.
-                    <!-- Truth can only be found in one place: the code. -->
-                </blockquote>
+        <a id="header-title" href="/home">
+            <h1>David Thompson Code Club</h1>
+        </a>
+        <blockquote id="header-quote">
+            <!-- Give a man a program, frustrate him for a day.
+            Teach a man to program, frustrate him for a lifetime. -->
+            Truth can only be found in one place: the code.
+        </blockquote>
+        <nav id="header-nav">
+            <!-- <a>nchors are wrapped in <div>s
+            so that they will show up as blocks,
+            just like the <detail> elements,
+            when viewed without CSS. -->
+            <div>
+                <a href="/home">Home</a>
             </div>
-            <nav id="header-nav">
-                <ul>
-                    <li>
-                        <a href="/home">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="/lessons">Lessons</a>
-                    </li>
-                    <li>
-                        <a href="/projects">Projects</a>
-                    </li>
-                    <li>
-                        <a href="/contact">Contact</a>
-                    </li>
-                    <li class="important">
-                        <a href="/join">Join</a>
-                    </li>
+            <div>
+                <a href="/about">About</a>
+            </div>
+            <details>
+                <summary>Topics</summary>
+                <ul class="dropdown">
+                    <li><a href="/week/0">Week 0: Welcome!</a></li>
+                    <li><a href="/week/1">Week 1: Introduction to Python</a></li>
+                    <li><a href="/week/2">Week 2: Canadian Computing Contest (CCC)</a></li>
                 </ul>
-            </nav>
-        </div>
+            </details>
+            <details>
+                <summary>Projects</summary>
+            </details>
+            <div>
+                <a href="/contact">Contact</a>
+            </div>
+            <div>
+                <a href="/join">Join</a>
+            </div>
+        </nav>
     </header>
     <hr class="hidden">
     <main>
