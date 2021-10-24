@@ -1,7 +1,34 @@
-body {
-    background: #cfc;
+/**
+ * Very basic styles, such as resetting browser defaults
+ */
+
+* {
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background: #0f0;
+    color: white;
 }
 
 .hidden {
     display: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #cfc;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    margin-bottom: auto;
 }
