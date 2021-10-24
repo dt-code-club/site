@@ -1,0 +1,9 @@
+/*
+@import "https://fonts.googleapis.com/css?family=Alegreya|Coming+Soon|Josefin+Sans:300|Just+Another+Hand|Nosifer|Oswald|Parisienne|Poiret+One|Quicksand|Roboto|Rock+Salt|Scope+One|Tangerine|Ubuntu|Ubuntu+Mono|VT323|Walter+Turncoat|Yellowtail&display=fallback";
+*/
+
+/* [https://www.1001fonts.com/wieynk-fraktur-font.html] */
+@font-face {
+    font-family: "Wieynk Fraktur Zier";
+    src: url("/fonts/wieynk_fraktur_zier.ttf");
+}

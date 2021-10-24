@@ -27,6 +27,7 @@ body {
     background: #cfc;
     display: flex;
     flex-direction: column;
+    font-family: "Ubuntu", serif;
 }
 
 main {
