@@ -1,8 +1,10 @@
+#header, #footer {
+    color: white;
+}
 #header {
     align-items: center;
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(0, 85, 0, 0.9));
     background: linear-gradient(45deg, #000d, #050d);
-    color: white;
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 75px auto;
@@ -10,13 +12,15 @@
     padding: 10px;
 }
 
-#header a {
+:is(#header, #footer) .site-title,
+#header-nav a {
     color: white;
     text-decoration: inherit;
     text-shadow: 0 0 10px green;
     transition: 500ms;
 }
-#header a:hover {
+:is(#header, #footer) .site-title:hover,
+#header-nav a:hover {
     color: rgba(255, 255, 255, 0.75);
     color: #fffb;
 }
@@ -43,21 +47,13 @@
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
 }
-#header-title {
-    font-family: "Wieynk Fraktur Zier", "Arial", sans-serif;
-    font-size: 1.75em;
-    font-weight: bold;
+#header-wordmark .site-title {
+    font-size: 1.75rem;
 }
 #header-quote {
     font-family: "Parisienne", "Times New Roman", serif;
     font-style: italic;
     margin-left: 20px;
-}
-@media (max-width: 600px) {
-    #header-quote,
-    #header-nav {
-        display: none !important;
-    }
 }
 
 #header-nav {
@@ -105,4 +101,52 @@
 }
 #header-nav > li > a[href="/join"]:hover {
     background: #0c0;
+}
+
+#footer {
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0.9), rgba(0, 85, 0, 0.9));
+    background: linear-gradient(-45deg, #000d, #050d);
+    display: flex;
+    padding: 20px;
+}
+#footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: auto;
+}
+#footer-inner > section {
+    flex: 1 0;
+}
+#footer-home {
+    display: flex;
+    justify-content: left;
+}
+#footer-home > .site-title {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    text-align: center;
+}
+#footer-contact {
+    display: flex;
+}
+#footer-copyright {
+    font-size: 0.75rem;
+}
+
+@media (max-width: 600px) {
+    #header-quote,
+    #header-nav {
+        display: none !important;
+    }
+    #footer-inner > section {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    #footer-inner > section + section {
+        margin-top: 20px;
+    }
+    #footer-home,
+    #footer-contact {
+        justify-content: center;
+    }
 }

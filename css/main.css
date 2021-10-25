@@ -49,3 +49,9 @@ a {
 main {
     margin-bottom: auto;
 }
+
+.site-title {
+    font-family: "Wieynk Fraktur Zier", "Arial", sans-serif;
+    line-height: 1em;
+    font-weight: bold;
+}

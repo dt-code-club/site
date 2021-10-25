@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
     <!-- link rel="stylesheet" href="/css/home.css" -->
 </head>
 <body>
@@ -17,7 +16,7 @@
             <img src="/img/logo.png" alt="DT Code Club logo" height="75px">
         </a>
         <div id="header-wordmark">
-            <a id="header-title" href="/">David Thompson Code Club</a>
+            <a class="site-title" href="/">David Thompson Code Club</a>
             <span class="hidden"> - </span>
             <span id="header-quote" title="Quote by Robert C. Martin">
                 Truth can only be found in one place: the code.
@@ -49,7 +48,6 @@
                     <li></li>
                 </ul>
             </li -->
-            <li><a href="/contact">Contact</a></li>
             <li><a href="/join">Join</a></li>
         </ul>
     </header>
@@ -78,43 +76,57 @@
     </main>
     <hr class="hidden">
     <footer id="footer">
-        <section id="footer-main">
-            <a id="footer-logo" href="/">
-                <img src="/img/logo.png" alt="DT Code Club logo" height="50px">
-            </a>
-            <a id="footer-title" href="/">David Thompson Code Club</a>
-            <nav id="footer-nav">
-                <a href="/about">About</a>
-                |
-                <a href="/topics">Topics</a>
-                |
-                <a href="/news">News</a>
-                |
-                <a href="/join">Join</a>
-            </nav>
-        </section>
-        <section id="footer-contact">
-            <ul>
-                <li><a href="mailto:dtcodeclub@gmail.com">Email</a></li>
-                <li><a href="https://github.com/dt-code-club">GitHub</a></li>
-                <li><a href="https://discord.gg/W9qvWmcuRn">Discord</a></li>
-                <li><a href="https://instagram.com/dtcodeclub">Instagram</a></li>
-            </ul>
-        </section>
-        <section id="footer-copyright">
-            <p>
-                Copyright (C) 2021 David Thompson Code Club
-            </p>
-            <p>
-                Except where otherwise noted,
-                content on this site is licensed under the
-                <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-            <p>
-                Site design thanks to
-                <a href="https://github.com/climbTheStairs">climbTheStairs</a>.
-            </p>
-        </section>
+        <div id="footer-inner">
+            <section id="footer-main">
+                <nav id="footer-home">
+                    <a id="footer-logo" href="/">
+                        <img src="/img/logo.png" alt="DT Code Club logo" height="50px">
+                    </a>
+                    <a class="site-title" href="/">
+                        David Thompson
+                        <br>
+                        Code Club
+                    </a>
+                </nav>
+                <nav id="footer-nav">
+                    <a href="/about">About</a>
+                    |
+                    <a href="/topics">Topics</a>
+                    |
+                    <a href="/news">News</a>
+                    |
+                    <a href="/join">Join</a>
+                </nav>
+            </section>
+            <section id="footer-contact">
+                <ul>
+                    <!-- TODO: Add icons for each <li> -->
+                    <li><a href="mailto:dtcodeclub@gmail.com">Email</a></li>
+                    <li><a href="https://github.com/dt-code-club">GitHub</a></li>
+                    <li><a href="https://discord.gg/W9qvWmcuRn">Discord</a></li>
+                    <li><a href="https://instagram.com/dtcodeclub">Instagram</a></li>
+                </ul>
+            </section>
+            <section id="footer-copyright">
+                <p>
+                    <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+                        <img src="/img/cc-by-sa.svg" alt="CC-BY-SA license button" width="88px" height="31px">
+                    </a>
+                </p>
+                <p>
+                    Copyright (C) 2021 David Thompson Code Club
+                </p>
+                <p>
+                    Except where otherwise noted,
+                    content on this site is licensed under the
+                    <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+                <p>
+                    Site design thanks to
+                    <a href="https://github.com/climbTheStairs">climbTheStairs</a>.
+                </p>
+            </section>
+        </div>
     </footer>
 </body>
 </html>
