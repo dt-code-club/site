@@ -30,6 +30,22 @@ body {
     font-family: "Ubuntu", serif;
 }
 
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+
+a {
+    color: lime;
+}
+
+:is(ul, ol):not(.not-list) {
+    margin-inline-start: 1.5em;
+    text-align: left;
+}
+
 main {
     margin-bottom: auto;
 }
