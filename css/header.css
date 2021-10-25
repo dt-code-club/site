@@ -12,14 +12,16 @@
     padding: 10px;
 }
 
-:is(#header, #footer) .site-title,
+#header .site-title,
+#footer .site-title,
 #header-nav a {
     color: white;
     text-decoration: inherit;
     text-shadow: 0 0 10px green;
     transition: 500ms;
 }
-:is(#header, #footer) .site-title:hover,
+#header .site-title:hover,
+#footer .site-title:hover,
 #header-nav a:hover {
     color: rgba(255, 255, 255, 0.75);
     color: #fffb;
