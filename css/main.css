@@ -30,6 +30,9 @@ body {
     font-family: "Ubuntu", serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Walter Turncoat", "Arial", sans-serif;
+}
 h1 {
     font-size: 2em;
 }
@@ -50,6 +53,9 @@ ul:not(.not-list),
 
 main {
     margin-bottom: auto;
+    margin-inline: auto;
+    max-width: 1280px;
+    padding: 50px 20px;
 }
 
 .site-title {
