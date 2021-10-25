@@ -41,7 +41,12 @@ h2 {
 }
 
 a {
-    color: lime;
+    color: #009b3d;
+    text-decoration: inherit;
+    transition: 500ms;
+}
+a:hover {
+    text-shadow: 2px 2px 4px;
 }
 
 ol:not(.not-list),
@@ -55,7 +60,7 @@ main {
     margin-bottom: auto;
     margin-inline: auto;
     max-width: 1280px;
-    padding: 50px 20px;
+    padding: 20px;
 }
 
 .site-title {
