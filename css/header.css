@@ -29,16 +29,13 @@
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
 }
-#header-logo > a {
-    display: block;
+#header-logo > img {
     border-radius: 100%;
     box-shadow: 0 0 10px green;
-    overflow: hidden;
-}
-#header-logo > a > img {
     display: block;
+    transition: transform 500ms;
 }
-#header-logo:hover > a {
+#header-logo:hover > img {
     transform: rotateX(180deg) rotateY(180deg) rotateZ(360deg);
 }
 
