@@ -52,6 +52,11 @@
     src: url("/fonts/ubuntu/ubuntu_mono_bold_italic.ttf") format("truetype");
 }
 @font-face {
+    font-family: "Walter Turncoat";
+    font-display: fallback;
+    src: url("/fonts/walter_turncoat/walter_turncoat.ttf") format("truetype");
+}
+@font-face {
     font-family: "Wieynk Fraktur Zier";
     font-display: fallback;
     src: url("/fonts/wieynk_fraktur_zier/wieynk_fraktur_zier.ttf") format("truetype");
