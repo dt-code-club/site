@@ -52,7 +52,7 @@
     font-weight: bold;
 }
 #header-quote {
-    font-family: "Parisienne", serif;
+    font-family: "Parisienne", "Times New Roman", serif;
     font-style: italic;
     margin-left: 20px;
 }
@@ -76,7 +76,7 @@
 #header-nav a {
     display: block;
     padding: 5px 15px;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Ubuntu", "Arial", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
 }
