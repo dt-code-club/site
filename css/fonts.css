@@ -1,9 +1,58 @@
-/*
-@import "https://fonts.googleapis.com/css?family=Alegreya|Coming+Soon|Josefin+Sans:300|Just+Another+Hand|Nosifer|Oswald|Parisienne|Poiret+One|Quicksand|Roboto|Rock+Salt|Scope+One|Tangerine|Ubuntu|Ubuntu+Mono|VT323|Walter+Turncoat|Yellowtail&display=fallback";
-*/
-
-/* [https://www.1001fonts.com/wieynk-fraktur-font.html] */
+@font-face {
+    font-family: "Parisienne";
+    font-display: fallback;
+    src: url("/fonts/parisienne/parisienne.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Ubuntu";
+    font-display: fallback;
+    src: url("/fonts/ubuntu/ubuntu.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    font-display: fallback;
+    src: url("/fonts/ubuntu/ubuntu_bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-display: fallback;
+    src: url("/fonts/ubuntu/ubuntu_italic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Ubuntu";
+    font-style: italic;
+    font-weight: bold;
+    font-display: fallback;
+    src: url("/fonts/ubuntu/ubuntu_bold_italic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    font-display: fallback;
+    src: url("/fonts/ubuntu/ubuntu_mono.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    font-weight: bold;
+    font-display: fallback;
+    src: url("/fonts/ubuntu/ubuntu_mono_bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    font-style: italic;
+    font-display: fallback;
+    src: url("/fonts/ubuntu/ubuntu_mono_italic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Ubuntu Mono";
+    font-style: italic;
+    font-weight: bold;
+    font-display: fallback;
+    src: url("/fonts/ubuntu/ubuntu_mono_bold_italic.ttf") format("truetype");
+}
 @font-face {
     font-family: "Wieynk Fraktur Zier";
-    src: url("/fonts/wieynk_fraktur_zier.ttf");
+    font-display: fallback;
+    src: url("/fonts/wieynk_fraktur_zier/wieynk_fraktur_zier.ttf") format("truetype");
 }
