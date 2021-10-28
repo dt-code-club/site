@@ -1,0 +1,32 @@
+#!/bin/sh
+
+fail() {
+    >&2 echo "$@"
+    exit 1
+}
+
+gen_html() {
+    md="$1.md"
+    html="$1.html"
+    {
+        echo '<!DOCTYPE html>'
+        echo '<html lang="en">'
+        cat template/head.html
+        echo '<body>'
+        cat template/header.html
+        echo '<hr class="hidden">'
+        echo '<main>'
+        perl '/usr/local/src/markdown-1.0.1/Markdown.pl' --html4tags "$md"
+        echo '</main>'
+        echo '<hr class="hidden">'
+        cat template/footer.html
+        echo '</body>'
+        echo '</html>'
+    } > "$html"
+}
+
+[ "$(pwd)" = '/srv/dtcc/site' ] || fail 'Script must be run in /srv/dtcc/site'
+
+for f in dist/*.md; do
+    gen_html "${f%.md}"
+done
