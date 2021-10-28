@@ -12,52 +12,52 @@
     font-family: "Ubuntu";
     font-weight: bold;
     font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu_bold.ttf") format("truetype");
+    src: url("/fonts/ubuntu/ubuntu-bold.ttf") format("truetype");
 }
 @font-face {
     font-family: "Ubuntu";
     font-style: italic;
     font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu_italic.ttf") format("truetype");
+    src: url("/fonts/ubuntu/ubuntu-italic.ttf") format("truetype");
 }
 @font-face {
     font-family: "Ubuntu";
     font-style: italic;
     font-weight: bold;
     font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu_bold_italic.ttf") format("truetype");
+    src: url("/fonts/ubuntu/ubuntu-bold-italic.ttf") format("truetype");
 }
 @font-face {
     font-family: "Ubuntu Mono";
     font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu_mono.ttf") format("truetype");
+    src: url("/fonts/ubuntu/ubuntu-mono.ttf") format("truetype");
 }
 @font-face {
     font-family: "Ubuntu Mono";
     font-weight: bold;
     font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu_mono_bold.ttf") format("truetype");
+    src: url("/fonts/ubuntu/ubuntu-mono-bold.ttf") format("truetype");
 }
 @font-face {
     font-family: "Ubuntu Mono";
     font-style: italic;
     font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu_mono_italic.ttf") format("truetype");
+    src: url("/fonts/ubuntu/ubuntu-mono-italic.ttf") format("truetype");
 }
 @font-face {
     font-family: "Ubuntu Mono";
     font-style: italic;
     font-weight: bold;
     font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu_mono_bold_italic.ttf") format("truetype");
+    src: url("/fonts/ubuntu/ubuntu-mono-bold-italic.ttf") format("truetype");
 }
 @font-face {
     font-family: "Walter Turncoat";
     font-display: fallback;
-    src: url("/fonts/walter_turncoat/walter_turncoat.ttf") format("truetype");
+    src: url("/fonts/walter-turncoat/walter-turncoat.ttf") format("truetype");
 }
 @font-face {
     font-family: "Wieynk Fraktur Zier";
     font-display: fallback;
-    src: url("/fonts/wieynk_fraktur_zier/wieynk_fraktur_zier.ttf") format("truetype");
+    src: url("/fonts/wieynk-fraktur-zier/wieynk-fraktur-zier.ttf") format("truetype");
 }
