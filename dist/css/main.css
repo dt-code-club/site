@@ -27,7 +27,7 @@ body {
     background: #cfc;
     display: flex;
     flex-direction: column;
-    font-family: "Ubuntu", serif;
+    font-family: var(--font);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,7 +41,7 @@ h2 {
 }
 
 a {
-    color: #009b3d;
+    color: var(--logo-color);
     text-decoration: inherit;
     transition: 500ms;
 }
@@ -70,7 +70,7 @@ main > * {
 main pre,
 main code {
     border: 1px solid green;
-    font-family: "Ubuntu Mono", monospace;
+    font-family: var(--mono);
 }
 main pre {
     padding: 10px;

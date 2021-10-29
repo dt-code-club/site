@@ -74,7 +74,7 @@
 #header-nav a {
     display: block;
     padding: 5px 15px;
-    font-family: "Ubuntu", "Arial", sans-serif;
+    font-family: var(--font);
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -96,7 +96,7 @@
     text-transform: none;
 }
 #header-nav .dropdown > li > a:hover {
-    background: #009b3d;
+    background: var(--logo-color);
     color: inherit;
 }
 #header-nav > li > a[href="/join"] {
