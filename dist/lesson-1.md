@@ -87,7 +87,7 @@ and the data you want to store:
     print(variable)
 
 In the first line, a variable named "variable" is made.
-In the second, Python reads variable named "variable",
+In the second, Python reads the variable named "variable",
 which contains the string "Hello world!".
 It then prints the "Hello world!".
 
