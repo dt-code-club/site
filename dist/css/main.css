@@ -69,7 +69,7 @@ main > * {
 
 main pre,
 main code {
-    border: 1px solid green;
+    border: 1px solid var(--logo-color);
     font-family: var(--mono);
 }
 main pre {
