@@ -1,4 +1,4 @@
-# Lesson 1: Setup, datatypes, variables, and if Statements
+# Lesson 1: Setup, datatypes, variables, and if statements
 
 ## Setup
 
