@@ -59,8 +59,31 @@ ul:not(.not-list),
 main {
     margin-bottom: auto;
     margin-inline: auto;
-    max-width: 1280px;
+    max-width: 800px;
     padding: 20px;
+}
+
+main > * {
+    margin-block: 10px;
+}
+
+main pre,
+main code {
+    border: 1px solid green;
+    font-family: "Ubuntu Mono", monospace;
+}
+main pre {
+    padding: 10px;
+    white-space: pre-wrap;
+}
+main code {
+    margin-inline: 1px;
+    padding-inline: 5px;
+}
+main pre > code {
+    border: initial;
+    margin-inline: initial;
+    padding-inline: initial;
 }
 
 .site-title {
