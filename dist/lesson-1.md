@@ -1,4 +1,4 @@
-# Lesson 1 -- Setup, Datatypes, Variables, and If Statements
+# Lesson 1: Setup, datatypes, variables, and if Statements
 
 ## Setup
 
@@ -105,7 +105,7 @@ To create a variable in python, it's simple:
 Now if you ever wanted to change what the computer printed,
 you would only need to change what's inside of the variable.
 
-## Evaluation and If Statements
+## Evaluation and if statements
 
 Type this into your IDLE editor,
 and note the difference between the results:
