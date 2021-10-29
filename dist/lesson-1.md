@@ -2,45 +2,44 @@
 
 ## Setup
 
-Python can be downloaded from <https://www.python.org/>.
-If you're doing it on a school computer,
-make sure to uncheck "Install launcher for all users"
-on the first page.
+Python can be downloaded from [its website](https://www.python.org/).
+If you're installing it on a school computer,
+make sure to uncheck "Install launcher for all users" on the installer
+as you do not have admin permissions.
 
-Once done, hit the Windows key then type in "IDLE".
-If you're on mac, go to launchpad and search for IDLE.
-Open the application,
-then create a new file by clicking on the file tab at the top.
-It can be named anything you want,
-just make sure you know where you saved it.
-Once done, you're ready to start coding inside of this new file!
+Once done, hit the Windows key then search for "idle".
+Open the application
+and create a new file by typing `Ctrl+N`.
+Name it anything you want,
+but Python files are generally named
+with lowercase words separated by underscores
+
+Now you're ready to start coding!
+
+## Hello world!
 
 We'll begin by doing a standard procedure
 when learning a new coding language:
-printing "Hello world".
+Printing "Hello world!".
 It looks like this:
 
-    print('Hello world')
+    print("Hello world!")
 
 After typing that in,
-hit `F5` or go into Run -> Run Module.
-The initial window should pop up displaying "Hello world".
+save your file by hitting `Ctrl+S`
+and execute your code by hitting `F5`.
+The initial window should pop up displaying "Hello world!".
 That's your very first line of code!
-
-Note: Every time you want to run code,
-you need to save the file.
-The easiest way to do this
-is by hitting `Ctrl+S` (Windows) or `Command+S` (Mac).
 
 ## Datatypes
 
 If we dissect what we've just done here,
 we have two things:
-the `print()` function and `"Hello world"` string.
+the `print()` function and `"Hello world!"` string.
 But what are these?
 We'll be going over functions in a later lesson,
 but for now just think of them like recipes:
-they're instructions for the computer
+They're instructions for the computer
 to take things in (input)
 and put something back out (output).
 Today we'll be focusing on the second part, the "string".
@@ -48,24 +47,18 @@ A string is a datatype,
 and other common datatypes along with examples
 can be seen here:
 
-- Strings: `""`, `''`
-- Integers: `5`, `10`, `15`
-- Floats: `5.5`, `1.5`
+- Strings: `"Hello world!"`, `'123'`
+- Integers: `5`, `10`, `-15`
+- Floats: `5.0`, `1.5`
 - Booleans: `True`, `False`
 
-Strings are marked with single or double quotation marks.
-These are most used for text.
-The computer will see
-whatever is inside the quotation marks as a string,
-even if they are another datatype (ex. `5`),
-so be careful with that.
-
-Integers are numbers with no decimals.
-
-Floats (floating points) are numbers with decimals.
-
-Booleans are either `True` or `False`,
-make sure to have them without quotation marks.
+Strings are marked with either single or double quotation marks
+(it's good practice to use only one and be consistent),
+and they store a sequence of characters.
+Python will see whatever is inside the quotation marks as a string,
+even if it is another datatype (i.e. `5` is not the same as `"5"`),
+so make sure you understand don't accidentally quote
+datatypes that aren't strings!
 
 ## Variables
 
@@ -73,36 +66,33 @@ If we want to keep on using the same value,
 it would be tedious to type out the same thing
 every time you wanted to use it.
 If the value changed,
-you would also need to change
-every instance of it in your code.
+we would also need to change
+every instance of it in our code.
 This is where variables come in.
 
 Variables are containers for storing data values.
 Think of them like a paint bucket:
-you can put paint into it
+You can put paint into it
 and use that same paint whenever necessary.
 Whenever a modification is made,
-like adding a bit of orange paint to a bucket of white paint,
-it would change the colour of the paint
-in every instance it is used.
+like changing the color of the paint,
+the color of the paint would change everywhere the bucket is used.
 
-To create a variable in python,
-you type the variable name (whatever you want it to be),
-an equals sign (=),
-and whatever you want to store.
+To create a variable in Python,
+type the variable name (whatever you want it to be),
+an equals sign (`=`),
+and the data you want to store:
 
-    variable = "Hello"
+    variable = "Hello world!"
     print(variable)
 
 In the first line, a variable named "variable" is made.
-In the second, python calls to the variable named variable,
-which contains the string "Hello".
-It then prints the "Hello".
+In the second, Python reads variable named "variable",
+which contains the string "Hello world!".
+It then prints the "Hello world!".
 
-Now if you ever wanted to change what the computer printed,
-you would only need to change what's inside of the variable.
-
-Note: Variables cannot have spaces in their names.
-In python we generally follow naming conventions of `snake_case`,
+Variables may only contain letters, numbers, and underscores;
+and they may not begin with a number.
+In Python we generally follow naming conventions of `snake_case`,
 where words are all in lowercase and separated by underscores.
-Names should be short but describe their purpose.
+Names should be short and descriptive.
