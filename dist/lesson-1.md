@@ -20,7 +20,7 @@ Now you're ready to start coding!
 
 We'll begin by doing a standard procedure
 when learning a new coding language:
-Printing "Hello world!".
+printing "Hello world!".
 It looks like this:
 
     print("Hello world!")
