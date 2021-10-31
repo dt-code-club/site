@@ -12,7 +12,7 @@ Open the application
 and create a new file by typing `Ctrl+N`.
 Name it anything you want,
 but Python files are generally named
-with lowercase words separated by underscores
+with lowercase words separated by underscores.
 
 Now you're ready to start coding!
 
@@ -38,7 +38,7 @@ we have two things:
 the `print()` function and `"Hello world!"` string.
 But what are these?
 We'll be going over functions in a later lesson,
-but for now just think of them like recipes:
+but for now, just think of them as recipes:
 They're instructions for the computer
 to take things in (input)
 and put something back out (output).
@@ -71,7 +71,7 @@ every instance of it in our code.
 This is where variables come in.
 
 Variables are containers for storing data values.
-Think of them like a paint bucket:
+Think of them as a paint bucket:
 You can put paint into it
 and use that same paint whenever necessary.
 Whenever a modification is made,
@@ -93,6 +93,6 @@ It then prints the "Hello world!".
 
 Variables may only contain letters, numbers, and underscores;
 and they may not begin with a number.
-In Python we generally follow naming conventions of `snake_case`,
+In Python, we generally follow naming conventions of `snake_case`,
 where words are all in lowercase and separated by underscores.
 Names should be short and descriptive.
