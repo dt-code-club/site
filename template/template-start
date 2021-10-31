@@ -32,22 +32,22 @@
             just like the <detail> elements,
             when viewed without CSS. -->
             <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
+            <li><a href="/about/">About</a></li>
             <li>
-                <a href="/content">Content</a>
+                <a href="/content/">Content</a>
                 <ul class="dropdown not-list">
-                    <li><a href="/meetings/2022.html">List of meetings (2021-2022)</a></li>
-                    <li><a href="/python-intro.html">Introduction to Python</a></li>
+                    <li><a href="/meetings/2022/">List of meetings (2021-2022)</a></li>
+                    <li><a href="/python-intro/setup-datatypes-variables/">Introduction to Python</a></li>
                 </ul>
             </li>
-            <li><a href="/news">Announcements</a></li>
+            <li><a href="/news/">Announcements</a></li>
             <!-- li>
-                <a href="/projects">Projects</a>
+                <a href="/projects/">Projects</a>
                 <ul class="dropdown not-list">
                     <li></li>
                 </ul>
             </li -->
-            <li><a href="/join">Join</a></li>
+            <li><a href="/join/">Join</a></li>
         </ul>
     </header>
     <hr class="hidden">
