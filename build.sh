@@ -14,19 +14,9 @@ gen_html() {
     fi
     echo "Generating $1.html..."
     {
-        echo '<!DOCTYPE html>'
-        echo '<html lang="en">'
-        cat template/head.html
-        echo '<body>'
-        cat template/header.html
-        echo '<hr class="hidden">'
-        echo '<main>'
+        cat template/template-start
         perl '/usr/local/src/markdown-1.0.1/Markdown.pl' --html4tags "$1.md"
-        echo '</main>'
-        echo '<hr class="hidden">'
-        cat template/footer.html
-        echo '</body>'
-        echo '</html>'
+        cat template/template-end
     } > "$1.html"
 }
 
