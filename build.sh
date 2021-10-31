@@ -10,7 +10,10 @@ fail() {
 
 gen_html() {
     if [ -f "$1.html" ]; then
-        [ -n "$(find "$1.md" -newer "$1.html")" ] || return
+        [ -n "$(find "$1.md"                   -newer "$1.html")" ] ||
+        [ -n "$(find 'template/template-start' -newer "$1.html")" ] ||
+        [ -n "$(find 'template/template-end'   -newer "$1.html")" ] ||
+        return
     fi
     echo "Generating $1.html..."
     {
