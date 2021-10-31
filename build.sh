@@ -3,24 +3,28 @@
 # Dependencies:
 # - Markdown
 
-fail() {
-    >&2 echo "$@"
-    exit 1
-}
-
 gen_html() {
-    if [ -f "$1.html" ]; then
-        [ -n "$(find "$1.md"                   -newer "$1.html")" ] ||
-        [ -n "$(find 'template/template-start' -newer "$1.html")" ] ||
-        [ -n "$(find 'template/template-end'   -newer "$1.html")" ] ||
+    md="$1.md"
+    if [ "$(basename "$1")" = index ] || [ "$(basename "$1")" = not_found ]; then
+        html="$1.html"
+    else
+        html="$1/index.html"
+    fi
+
+    if [ -f "$html" ]; then
+        [ -n "$(find "$md"                     -newer "$html")" ] ||
+        [ -n "$(find 'template/template-start' -newer "$html")" ] ||
+        [ -n "$(find 'template/template-end'   -newer "$html")" ] ||
         return
     fi
-    echo "Generating $1.html..."
+
+    echo "Generating $html..."
+    mkdir --parents "$(dirname "$html")"
     {
         cat template/template-start
-        perl '/usr/local/src/markdown-1.0.1/Markdown.pl' --html4tags "$1.md"
+        perl '/usr/local/src/markdown-1.0.1/Markdown.pl' --html4tags "$md"
         cat template/template-end
-    } > "$1.html"
+    } > "$html"
 }
 
 # WARNING: Will not work on file names containing newlines!
