@@ -1,4 +1,4 @@
-# Setup, Datatypes, and Variables
+# Python Lesson 1: Setup, Datatypes, and Variables
 
 ## Setup
 
