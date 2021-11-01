@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Todo:
+# - Generate PDFs
+# - Use Pandoc instead of Markdown
+
 # Dependencies:
 # - Markdown
 
