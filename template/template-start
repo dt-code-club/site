@@ -37,7 +37,7 @@
                 <a href="/content/">Content</a>
                 <ul class="dropdown not-list">
                     <li><a href="/meetings/2022/">List of meetings (2021-2022)</a></li>
-                    <li><a href="/python-intro/setup-datatypes-variables/">Introduction to Python</a></li>
+                    <li><a href="/python-intro/">Introduction to Python</a></li>
                 </ul>
             </li>
             <li><a href="/news/">Announcements</a></li>
