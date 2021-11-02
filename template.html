@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="utf-8" />
+$if(author-meta)$
+    <meta name="author" content="$for(author-meta)$$author-meta$$sep$, $endfor$" />
+$endif$
+$if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$" />
+$endif$
+$if(description-meta)$
+    <meta name="description" content="$description-meta$" />
+$endif$
+    <meta name="generator" content="pandoc" />
+$if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+$endif$
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$pagetitle$ | DT Code Club</title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/headfoot.css" />
+</head>
+<body>
+    <header id="header">
+        <a id="header-logo" href="/">
+            <img src="/img/logo.png" alt="DT Code Club logo" height="75px" />
+        </a>
+        <div id="header-wordmark">
+            <a class="site-title" href="/">David Thompson Code Club</a>
+            <span class="hidden"> - </span>
+            <span id="header-quote" title="Quote by Robert C. Martin">
+                Truth can only be found in one place: the code.
+            </span>
+            <!-- span id="header-quote">
+                Give a man a program, frustrate him for a day.
+                Teach a man to program, frustrate him for a lifetime.
+            </span -->
+        </div>
+        <ul id="header-nav" class="not-list">
+            <!-- <a>nchors are wrapped in <div>s
+            so that they will show up as blocks,
+            just like the <detail> elements,
+            when viewed without CSS. -->
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li>
+                <a href="/content/">Content</a>
+                <ul class="dropdown not-list">
+                    <li><a href="/meetings/2022/">List of meetings (2021-2022)</a></li>
+                    <li><a href="/python-intro/">Introduction to Python</a></li>
+                </ul>
+            </li>
+            <li><a href="/news/">Announcements</a></li>
+            <!-- li>
+                <a href="/projects/">Projects</a>
+                <ul class="dropdown not-list">
+                    <li></li>
+                </ul>
+            </li -->
+            <li><a href="/join/">Join</a></li>
+        </ul>
+    </header>
+    <hr class="hidden" />
+    <main>
+$body$
+    </main>
+    <hr class="hidden" />
+    <footer id="footer">
+        <div id="footer-inner">
+            <section id="footer-main">
+                <nav id="footer-home">
+                    <a id="footer-logo" href="/">
+                        <img src="/img/logo.png" alt="DT Code Club logo" height="50px" />
+                    </a>
+                    <a class="site-title" href="/">
+                        <span>David Thompson</span>
+                        <!-- Styled <span> is used instead of <br>
+                        to only break when CSS is loaded -->
+                        <span id="footer-title-break"></span>
+                        <span>Code Club</span>
+                    </a>
+                </nav>
+                <nav id="footer-nav">
+                    <a href="/about">About</a>
+                    |
+                    <a href="/topics">Topics</a>
+                    |
+                    <a href="/news">News</a>
+                    |
+                    <a href="/join">Join</a>
+                </nav>
+            </section>
+            <section id="footer-contact">
+                <ul>
+                    <!-- TODO: Add icons for each <li> -->
+                    <li><a href="mailto:dtcodeclub@gmail.com">Email</a></li>
+                    <li><a rel="external noopener noreferrer" href="https://github.com/dt-code-club">GitHub</a></li>
+                    <li><a rel="external noopener noreferrer" href="https://discord.gg/W9qvWmcuRn">Discord</a></li>
+                    <li><a rel="external noopener noreferrer" href="https://instagram.com/dtcodeclub">Instagram</a></li>
+                </ul>
+            </section>
+            <section id="footer-copyright">
+                <p>
+                    <a rel="external license noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                        <img src="/img/cc-by-sa.svg" alt="CC-BY-SA license button" width="88px" height="31px" />
+                    </a>
+                </p>
+                <p>
+                    Copyright (C) 2021 David Thompson Code Club
+                </p>
+                <p>
+                    Except where otherwise noted,
+                    content on this site is licensed under the
+                    <a rel="external license noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                </p>
+                <p>
+                    Site design thanks to
+                    <a rel="external noopener noreferrer" href="https://github.com/climbTheStairs">climbTheStairs</a>.
+                </p>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>
