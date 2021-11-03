@@ -1,11 +1,14 @@
 #!/bin/sh
 
 # Todo:
+# - Display author and date in HTML
+# - Syntax highlighting
+# - Table of contents
 # - Generate PDFs
-# - Use Pandoc instead of Markdown
+# - Metadata
 
 # Dependencies:
-# - Markdown
+# - Pandoc
 
 gen_html() {
     md="$1.md"
@@ -16,19 +19,14 @@ gen_html() {
     fi
 
     if [ -f "$html" ]; then
-        [ -n "$(find "$md"                     -newer "$html")" ] ||
-        [ -n "$(find 'template/template-start' -newer "$html")" ] ||
-        [ -n "$(find 'template/template-end'   -newer "$html")" ] ||
+        [ -n "$(find "$md"           -newer "$html")" ] ||
+        [ -n "$(find 'template.html' -newer "$html")" ] ||
         return
     fi
 
     echo "Generating $html..."
     mkdir --parents "$(dirname "$html")"
-    {
-        cat template/template-start
-        perl '/usr/local/src/markdown-1.0.1/Markdown.pl' --html4tags "$md"
-        cat template/template-end
-    } > "$html"
+    pandoc "$md" --output="$html" --template='template.html' --no-highlight
 }
 
 # WARNING: Will not work on file names containing newlines!
