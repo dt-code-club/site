@@ -10,24 +10,6 @@
     padding: 10px;
 }
 
-#header a {
-    color: #0f0;
-}
-#header a:hover {
-    text-shadow: 2px 2px 4px black;
-}
-#header .site-title,
-#header-nav > li > a {
-    color: white;
-    text-shadow: 0 0 10px green;
-}
-#header .site-title:hover,
-#header-nav > li > a:hover {
-    color: rgba(255, 255, 255, 0.75);
-    color: #fffb;
-    text-shadow: none;
-}
-
 #header-logo {
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
@@ -47,7 +29,14 @@
     grid-row: 1 / span 1;
 }
 #header-wordmark .site-title {
+    color: white;
     font-size: 1.75rem;
+    text-shadow: 0 0 10px green;
+}
+#header-wordmark .site-title:hover {
+    color: rgba(255, 255, 255, 0.75);
+    color: #fffb;
+    text-shadow: none;
 }
 #header-wordmark > q {
     font-family: "Parisienne", "Times New Roman", serif;
@@ -67,11 +56,28 @@
     margin-left: 5px;
 }
 #header-nav a {
+    color: white;
     display: block;
     padding: 5px 15px;
     font-weight: bold;
+    text-shadow: 0 0 10px green;
     text-transform: uppercase;
 }
+#header-nav a:hover {
+    color: rgba(255, 255, 255, 0.75);
+    color: #fffb;
+    text-shadow: none;
+}
+
+#header-nav > li > a.important {
+    background: #0f0;
+    color: black;
+    text-shadow: none;
+}
+#header-nav > li > a.important:hover {
+    background: #0c0;
+}
+
 #header-nav .dropdown {
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(0, 85, 0, 0.9));
     background: linear-gradient(45deg, #000d, #050d);
@@ -80,28 +86,18 @@
     position: absolute;
     transition: 500ms;
 }
-#header-nav > li:not(:hover) > .dropdown {
+#header-nav > li:not(:hover) .dropdown {
     opacity: 0;
     visibility: hidden;
 }
-#header-nav .dropdown > li > a {
-    color: white;
+#header-nav .dropdown a {
     font-weight: normal;
     padding: 5px;
     text-transform: none;
 }
-#header-nav .dropdown > li > a:hover {
+#header-nav .dropdown a:hover {
     background: var(--logo-color);
     color: inherit;
-    text-shadow: none;
-}
-#header-nav > li > a.important {
-    background: #0f0;
-    color: black;
-    text-shadow: none;
-}
-#header-nav > li > a.important:hover {
-    background: #0c0;
 }
 
 @media (max-width: 600px) {

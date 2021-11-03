@@ -5,6 +5,7 @@
     display: flex;
     padding: 20px;
 }
+
 #footer-inner {
     display: flex;
     flex-wrap: wrap;
@@ -20,28 +21,27 @@
 #footer-inner a:hover {
     text-shadow: 2px 2px 4px black;
 }
-#footer .site-title {
-    color: white;
-    text-shadow: 0 0 10px green;
-}
-#footer .site-title:hover {
-    color: rgba(255, 255, 255, 0.75);
-    color: #fffb;
-    text-shadow: none;
-}
 
 #footer-home {
     display: flex;
     justify-content: left;
 }
-#footer-home > .site-title {
+#footer-home .site-title {
+    color: white;
     font-size: 1.5rem;
     margin-left: 10px;
     text-align: center;
+    text-shadow: 0 0 10px green;
+}
+#footer-home .site-title:hover {
+    color: rgba(255, 255, 255, 0.75);
+    color: #fffb;
+    text-shadow: none;
 }
 #footer-title-break {
     display: block;
 }
+
 #footer-contact {
     display: flex;
 }
