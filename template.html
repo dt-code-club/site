@@ -30,7 +30,7 @@ $endif$
             <img src="/img/logo.png" alt="DT Code Club logo" height="75" />
         </a>
         <div id="header-wordmark">
-            <a class="site-title" href="/">David Thompson Code Club</a>
+            <a id="header-title" href="/">David Thompson Code Club</a>
             <span class="hidden"> - </span>
             <q>Nos Quoque Programmamus</q>
             <!-- q title="Quote by Robert C. Martin">Truth can only be found in one place: the code.</q -->
@@ -64,19 +64,11 @@ $body$
     <footer id="footer">
         <div id="footer-inner">
             <section id="footer-main">
-                <nav id="footer-home">
-                    <a id="footer-logo" href="/">
-                        <img src="/img/logo.png" alt="DT Code Club logo" height="50" />
-                    </a>
-                    <a class="site-title" href="/">
-                        <span>David Thompson</span>
-                        <!-- Styled <span> is used instead of <br>
-                        to only break when CSS is loaded -->
-                        <span id="footer-title-break"></span>
-                        <span>Code Club</span>
-                    </a>
-                </nav>
-                <nav id="footer-nav">
+                <h2>DT Code Club</h2>
+                <a class="logo" href="/">
+                    <img src="/img/logo.png" alt="DT Code Club logo" height="50" />
+                </a>
+                <nav>
                     <a href="/about">About</a>
                     |
                     <a href="/topics">Topics</a>
@@ -86,7 +78,8 @@ $body$
                     <a href="/join">Join</a>
                 </nav>
             </section>
-            <section id="footer-contact">
+            <section id="footer-community">
+                <h2>Community</h2>
                 <ul>
                     <!-- TODO: Add icons for each <li> -->
                     <li><a href="mailto:dtcodeclub@gmail.com">Email</a></li>
@@ -96,6 +89,7 @@ $body$
                 </ul>
             </section>
             <section id="footer-copyright">
+                <h2>Copyright</h2>
                 <p>
                     <a rel="external license noopener noreferrer" href="https://creativecommons.org/licenses/by-sa/4.0/">
                         <img src="/img/cc-by-sa.svg" alt="CC-BY-SA license button" width="88" height="31" />

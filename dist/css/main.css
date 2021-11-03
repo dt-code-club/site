@@ -85,9 +85,3 @@ main pre > code {
     margin-inline: initial;
     padding-inline: initial;
 }
-
-.site-title {
-    font-family: "Wieynk Fraktur Zier", "Arial", sans-serif;
-    line-height: 1em;
-    font-weight: bold;
-}
