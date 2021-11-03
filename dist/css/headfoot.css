@@ -55,7 +55,7 @@
 #header-wordmark .site-title {
     font-size: 1.75rem;
 }
-#header-quote {
+#header-wordmark > q {
     font-family: "Parisienne", "Times New Roman", serif;
     font-style: italic;
     margin-left: 20px;
@@ -145,7 +145,7 @@
 }
 
 @media (max-width: 600px) {
-    #header-quote,
+    #header-wordmark > q,
     #header-nav {
         display: none !important;
     }
