@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# Todo:
-# - Display author and date in HTML
-# - Syntax highlighting
-# - Table of contents
-# - Generate PDFs
-# - Metadata
-
 # Dependencies:
 # - Pandoc
 
