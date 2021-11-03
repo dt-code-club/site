@@ -11,15 +11,16 @@
 }
 #header .site-title,
 #footer .site-title,
-#header-nav a {
+#header-nav > li > a {
     color: white;
     text-shadow: 0 0 10px green;
 }
 #header .site-title:hover,
 #footer .site-title:hover,
-#header-nav a:hover {
+#header-nav > li > a:hover {
     color: rgba(255, 255, 255, 0.75);
     color: #fffb;
+    text-shadow: none;
 }
 
 #header {
@@ -91,6 +92,7 @@
     visibility: hidden;
 }
 #header-nav .dropdown > li > a {
+    color: white;
     font-weight: normal;
     padding: 5px;
     text-transform: none;
@@ -98,13 +100,14 @@
 #header-nav .dropdown > li > a:hover {
     background: var(--logo-color);
     color: inherit;
+    text-shadow: none;
 }
-#header-nav > li > a[href="/join"] {
+#header-nav > li > a[href="/join/"] {
     background: #0f0;
     color: black;
     text-shadow: none;
 }
-#header-nav > li > a[href="/join"]:hover {
+#header-nav > li > a[href="/join/"]:hover {
     background: #0c0;
 }
 
