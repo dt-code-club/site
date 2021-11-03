@@ -75,7 +75,6 @@
 #header-nav a {
     display: block;
     padding: 5px 15px;
-    font-family: var(--font);
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -102,12 +101,12 @@
     color: inherit;
     text-shadow: none;
 }
-#header-nav > li > a[href="/join/"] {
+#header-nav > li > a.important {
     background: #0f0;
     color: black;
     text-shadow: none;
 }
-#header-nav > li > a[href="/join/"]:hover {
+#header-nav > li > a.important:hover {
     background: #0c0;
 }
 
