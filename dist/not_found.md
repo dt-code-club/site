@@ -1,4 +1,6 @@
-# You're lost
+---
+title: You're lost
+---
 
 This page doesn't exist.
 

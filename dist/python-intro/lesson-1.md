@@ -1,4 +1,8 @@
-# Python Lesson 1: Setup, Datatypes, and Variables
+---
+title: Python Lesson 1
+author: Eric Y.
+date: October 28, 2021
+---
 
 ## Setup
 

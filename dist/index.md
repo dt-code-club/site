@@ -1,4 +1,6 @@
-# Home
+---
+title: Home
+---
 
 ## Activities
 
