@@ -25,7 +25,7 @@ gen_html() {
 
     echo "Generating $html..."
     mkdir --parents "$(dirname "$html")"
-    pandoc "$md" --output "$html" --template='template.html' --no-highlight
+    pandoc "$md" --output="$html" --template='template.html' --no-highlight
 }
 
 # WARNING: Will not work on file names containing newlines!
