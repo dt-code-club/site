@@ -1,5 +1,5 @@
 ---
-title: "Python Lesson 1: Setup, datatypes, variables, and if statements"
+title: "Python lesson #1: Setup, datatypes, variables, and if statements"
 author: Eric Y.
 date: October 21, 2021
 ---
