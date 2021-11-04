@@ -30,9 +30,6 @@ body {
     font-family: var(--font);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Walter Turncoat", "Arial", sans-serif;
-}
 h1 {
     font-size: 2em;
 }
