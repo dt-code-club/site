@@ -2,17 +2,27 @@
 title: Home
 ---
 
-## Activities
+## Who are we?
 
-- Python
-- Idk
+We are the David Thompson Code Club,
+bringing students together over a shared passion for technology
+since 2020!
+
+Click [here](/about) for more details!
+
+## News
+
+Coming soon!
+
+## Potential activities
+
+- [Basic Python lessons](/python-intro)
+- Canadian Computing Contest (CCC) practice
+- Website design
+- Discord bots
+- Automated email
+- And more!  Post your suggestions now!
 
 ## Sign up!
 
-Lorem ipsum dolor sit amet, [consectetur adipiscing](#) elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-Excepteur sint occaecat cupidatat non proident,
-sunt in culpa qui officia deserunt mollit anim id est laborum.
+Visit [here](/join) for instructions to sign up!

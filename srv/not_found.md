@@ -1,8 +1,10 @@
 ---
-title: You're lost
+title: 404
 ---
 
-This page doesn't exist.
+*You're lost.*
+
+This page does not exist.
 
 If you followed a link to this page,
 please notify the site administrator
