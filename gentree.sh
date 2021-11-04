@@ -1,7 +1,12 @@
 #!/bin/sh
 
 {
-    echo '---\ntitle: Sitemap\n---\n\n```\n.'
+    echo '---'
+    echo 'title: Sitemap'
+    echo '---'
+    echo
+    echo '```'
+    echo '.'
     tree --charset='ascii' srv | tail --lines='+2'
     echo '```'
 } > srv/sitemap.md
