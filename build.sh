@@ -23,6 +23,6 @@ gen_html() {
 }
 
 # WARNING: Will not work on file names containing newlines!
-find dist -name '*.md' | while read -r f; do
+find srv -name '*.md' | while read -r f; do
     gen_html "${f%.md}"
 done
