@@ -3,30 +3,7 @@
     font-display: fallback;
     src: url("/fonts/parisienne/parisienne.ttf") format("truetype");
 }
-@font-face {
-    font-family: "Ubuntu";
-    font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu.ttf") format("truetype");
-}
-@font-face {
-    font-family: "Ubuntu";
-    font-weight: bold;
-    font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu-bold.ttf") format("truetype");
-}
-@font-face {
-    font-family: "Ubuntu";
-    font-style: italic;
-    font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu-italic.ttf") format("truetype");
-}
-@font-face {
-    font-family: "Ubuntu";
-    font-style: italic;
-    font-weight: bold;
-    font-display: fallback;
-    src: url("/fonts/ubuntu/ubuntu-bold-italic.ttf") format("truetype");
-}
+
 @font-face {
     font-family: "Ubuntu Mono";
     font-display: fallback;
@@ -51,11 +28,7 @@
     font-display: fallback;
     src: url("/fonts/ubuntu/ubuntu-mono-bold-italic.ttf") format("truetype");
 }
-@font-face {
-    font-family: "Walter Turncoat";
-    font-display: fallback;
-    src: url("/fonts/walter-turncoat/walter-turncoat.ttf") format("truetype");
-}
+
 @font-face {
     font-family: "Wieynk Fraktur Zier";
     font-display: fallback;
