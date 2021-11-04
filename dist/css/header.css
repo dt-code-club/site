@@ -1,7 +1,8 @@
 #header {
     align-items: center;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(0, 85, 0, 0.9));
-    background: linear-gradient(45deg, #000d, #050d);
+    background-color: #050;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(0, 85, 0, 0.9));
+    background-image: linear-gradient(45deg, #000d, #050d);
     color: white;
     display: grid;
     grid-gap: 10px;
@@ -96,6 +97,7 @@
     text-transform: none;
 }
 #header-nav .dropdown a:hover {
+    background: #009b3d;
     background: var(--logo-color);
     color: inherit;
 }

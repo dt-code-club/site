@@ -41,6 +41,7 @@ h2 {
 }
 
 a {
+    color: #009b3d;
     color: var(--logo-color);
     text-decoration: inherit;
     transition: 500ms;
@@ -69,6 +70,7 @@ main > * {
 
 main pre,
 main code {
+    border: 1px solid #009b3d;
     border: 1px solid var(--logo-color);
     font-family: var(--mono);
 }
