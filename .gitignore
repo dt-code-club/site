@@ -1,2 +1,2 @@
-dist/**/*.html
-dist/**/*.pdf
+srv/**/*.html
+srv/**/*.pdf
