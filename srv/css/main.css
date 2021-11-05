@@ -48,8 +48,7 @@ a:hover {
 }
 
 ol:not(.not-list),
-ul:not(.not-list),
-:is(ol, ul):not(.not-list) {
+ul:not(.not-list) {
     margin-inline-start: 1.5em;
     text-align: left;
 }
