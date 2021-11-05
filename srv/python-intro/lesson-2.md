@@ -1,8 +1,7 @@
----
-title: "Python Lesson #2: Math, Operators, and If Statements"
-author: Eric Y.
-date: November 4, 2021
----
+% Python Lesson #2:\
+    Math, Operators, and If Statements
+% Eric Y.
+% November 4, 2021
 
 ## Math
 
@@ -67,7 +66,7 @@ Python will skip over the block of code within the if statement
 
 An example:
 
-```
+```python
 result = 1
 if result == 1:
     print("The result is 1")

@@ -1,8 +1,7 @@
----
-title: "Python Lesson #1: Setup, Dataypes, and Variables"
-author: Eric Y.
-date: October 28, 2021
----
+% Python Lesson #1:\
+    Installation, Datatypes, and Variables
+% Eric Y.
+% October 28, 2021
 
 ## Setup
 
@@ -27,7 +26,9 @@ when learning a new coding language:
 printing "Hello world!".
 It looks like this:
 
-    print("Hello world!")
+```python
+print("Hello world!")
+```
 
 After typing that in,
 save your file by hitting `Ctrl+S`
@@ -87,8 +88,10 @@ type the variable name (whatever you want it to be),
 an equals sign (`=`),
 and the data you want to store:
 
-    variable = "Hello world!"
-    print(variable)
+```python
+variable = "Hello world!"
+print(variable)
+```
 
 In the first line, a variable named "variable" is made.
 In the second, Python reads the variable named "variable",
