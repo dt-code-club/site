@@ -1,0 +1,39 @@
+highlight-style: "etc/kate-modified.theme"
+pdf-engine: lualatex
+to: pdf
+variables:
+    fontsize: 12pt
+    geometry:
+    - margin=1in
+    header-includes:
+    - |
+        \usepackage{fancyhdr}
+        \usepackage{titling}
+        \fancypagestyle{plain}{
+            \fancyhead[L]{David Thompson Code Club}
+            \fancyhead[R]{\theauthor}
+        }
+        \pagestyle{plain}
+    - |
+        \makeatletter
+        \def\@maketitle{
+            \newpage
+            \null
+            \vskip 2em
+            \begin{center}
+                {
+                    \bfseries
+                    \LARGE
+                    \@title
+                }
+                \vskip 1em
+                {
+                    \large
+                    \@date
+                }
+            \end{center}
+            \vskip 2em
+        }
+        \makeatother
+    monofont: Ubuntu Mono
+    linkcolor: blue
