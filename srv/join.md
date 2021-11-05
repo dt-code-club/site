@@ -1,5 +1,5 @@
 ---
-title: Sign up
+title: Sign Up
 ---
 
 *You may want to read our short [about page](/about) first.*

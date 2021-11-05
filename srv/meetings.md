@@ -1,5 +1,5 @@
 ---
-title: Meetings archive
+title: Meetings Archive
 ---
 
 This is an archive of previous DT Code Club meetings.

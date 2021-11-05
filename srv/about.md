@@ -1,5 +1,5 @@
 ---
-title: About us
+title: About Us
 ---
 
 Welcome to *DT Code Club's website*!

@@ -1,5 +1,5 @@
 ---
-title: "Python lesson #1"
+title: "Python Lesson #1: Setup, Dataypes, and Variables"
 author: Eric Y.
 date: October 28, 2021
 ---

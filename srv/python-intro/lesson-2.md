@@ -1,5 +1,5 @@
 ---
-title: "Python Lesson #2"
+title: "Python Lesson #2: Math, Operators, and If Statements"
 author: Eric Y.
 date: November 4, 2021
 ---

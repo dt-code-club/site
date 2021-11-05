@@ -1,5 +1,5 @@
 ---
-title: News & announcements
+title: News & Announcements
 ---
 
 Work in progress.
