@@ -3,6 +3,8 @@
 # Dependencies:
 # - Pandoc
 
+[ "$(basename "$0")" = 'rebuild.sh' ] && rebuild=1
+
 gen_html() {
     md="$1.md"
     if [ "$(basename "$1")" = index ] || [ "$(basename "$1")" = not_found ]; then
@@ -11,7 +13,7 @@ gen_html() {
         html="$1/index.html"
     fi
 
-    if [ -f "$html" ]; then
+    if [ ! "$rebuild" ] && [ -f "$html" ]; then
         [ -n "$(find "$md"           -newer "$html")" ] ||
         [ -n "$(find 'template.html' -newer "$html")" ] ||
         return
