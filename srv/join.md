@@ -21,6 +21,7 @@ you may contact us and we'll gladly reserve a seat for you the next week!
 
 Unavailable to attend meetings?
 Don't worry!
-All our meetings are posted online,
-and you can discuss and find help in our active [Discord server](https://discord.gg/W9qvWmcuRn)
+All our meetings are posted [here](/meetings/),
+and you can discuss and find help
+in our active [Discord server](https://discord.gg/W9qvWmcuRn)
 as if you were at our meetings in person!
