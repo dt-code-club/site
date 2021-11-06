@@ -1,6 +1,7 @@
-highlight-style: "etc/kate-modified.theme"
-pdf-engine: lualatex
+from: markdown
 to: pdf
+pdf-engine: lualatex
+highlight-style: etc/kate-modified.theme
 variables:
     fontsize: 12pt
     geometry:

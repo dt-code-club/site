@@ -2,4 +2,4 @@
 
 f="${1%.md}"
 echo "Generating $f.pdf..."
-pandoc "$f.md" --output="$f.pdf" --defaults='etc/default.yaml'
+pandoc --output="$f.pdf" --defaults='etc/pdf.yaml' -- "$f.md"

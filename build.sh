@@ -22,11 +22,12 @@ gen_html() {
 
     echo "Generating $html..."
     mkdir --parents "$(dirname "$html")"
-    pandoc --output="$html" --template='etc/template.html' --no-highlight -- "$md"
+    pandoc --output="$html" --defaults='etc/html.yaml' -- "$md"
 }
 
 gen_sitemap() {
-    echo 'Generating srv/sitemap.md...'
+    echo 'Generating srv/sitemap/index.html...'
+    mkdir --parents 'srv/sitemap'
     {
         echo '---'
         echo 'title: Sitemap'
@@ -36,11 +37,8 @@ gen_sitemap() {
         echo '.'
         tree --charset='ascii' srv | tail --lines='+2'
         echo '```'
-    } > srv/sitemap.md
-    gen_html 'srv/sitemap'
+    } | pandoc --output='srv/sitemap/index.html' --defaults='etc/html.yaml'
 }
-
-rm srv/sitemap.md
 
 # WARNING: Will not work on file names containing newlines!
 find srv -name '*.md' | while read -r f; do
