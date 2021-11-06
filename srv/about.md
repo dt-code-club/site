@@ -35,5 +35,3 @@ All skill levels are welcome,
 and no coding knowledge or experience is required.
 Passionate about coding, or just curious?
 Don't hesitate to [join us](/join)!
-
-*Nos Quoque Programmamus*---Let Us Also Program!
