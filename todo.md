@@ -1,12 +1,15 @@
 # Things to do
 
-- Generate PDFs
-- Create News & Announcements page
 - Merge Home, About, and Join pages
-- Display author and date in HTML
+- Build script
+    - Replace rebuild.sh with CLI flag
+    - Generate PDFs
+    - Sitemap
+- Create News & Announcements page
 - Syntax highlighting
 - Table of contents
 - README
 - Metadata
-- Sitemap
+    - Display author and date in HTML
+    - Description
 - Copyright
