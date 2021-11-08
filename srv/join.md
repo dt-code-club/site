@@ -2,7 +2,7 @@
 title: Sign Up
 ---
 
-*You may want to read our short [about page](/about) first.*
+*You may want to read our short [about page](/about/) first.*
 
 Ready to sign up?  Great!!!
 
