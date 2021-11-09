@@ -46,7 +46,7 @@ gen_sitemap() {
     gen_html "$root_dir/sitemap"
 }
 
-write_abs_links() {
+write_full_links() {
     md="$1.md"
     pdf="$1.pdf"
 
@@ -76,6 +76,6 @@ rm -- "$root_dir/sitemap.md"
 # WARNING: Will not work on file names containing newlines!
 find "$root_dir" -name '*.md' | while read -r f; do
     gen_html "${f%.md}"
-    # write_abs_links "${f%.md}"
+    # write_full_links "${f%.md}"
 done
 gen_sitemap
