@@ -72,7 +72,7 @@ write_full_links() {
 }
 
 # Remove sitemap.md to prevent it from being built twice
-rm -- "$root_dir/sitemap.md"
+rm -f -- "$root_dir/sitemap.md"
 # WARNING: Will not work on file names containing newlines!
 find "$root_dir" -name '*.md' | while read -r f; do
     gen_html "${f%.md}"
