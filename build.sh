@@ -29,8 +29,6 @@ gen_html() {
 }
 
 gen_sitemap() {
-    echo "Generating $root_dir/sitemap/index.html..."
-    mkdir --parents "$root_dir/sitemap"
     {
         echo '---'
         echo 'title: Sitemap'
@@ -38,9 +36,10 @@ gen_sitemap() {
         echo
         echo '```'
         echo '.'
-        tree --charset='ascii' "$root_dir" | tail --lines='+2'
+        tree --charset='ascii' -- "$root_dir" | tail --lines='+2'
         echo '```'
-    } | pandoc --output="$root_dir/sitemap/index.html" --defaults='etc/html.yaml'
+    } > $root_dir/sitemap.md
+    gen_html "$root_dir/sitemap"
 }
 
 write_abs_links() {
@@ -50,10 +49,10 @@ write_abs_links() {
     sed "$rel_link_script; $root_link_script" "$f"
 }
 
+rm -- "$root_dir/sitemap.md"
 # WARNING: Will not work on file names containing newlines!
 find "$root_dir" -name '*.md' | while read -r f; do
     gen_html "${f%.md}"
     # write_abs_links "${f%.md}"
 done
-
 gen_sitemap
