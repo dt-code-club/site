@@ -6,7 +6,7 @@
 
 root_dir=srv
 
-[ "$(basename "$0")" = 'rebuild.sh' ] && rebuild=1
+[ "$1" = '-r' ] && rebuild=1
 
 gen_html() {
     md="$1.md"
