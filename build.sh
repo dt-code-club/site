@@ -5,6 +5,7 @@
 # - tree
 
 root_dir='srv'
+domain='dtcode.club'
 
 [ "$1" = '-r' ] && rebuild=1
 
@@ -43,10 +44,15 @@ gen_sitemap() {
 }
 
 write_abs_links() {
+    md="$1.md"
+    pdf="$1.pdf"
+
+    echo "Generating $pdf..."
+
     dir=$(echo "${1#$root_dir}/" | sed 's/\//\\\//g')
     rel_link_script="s/\(\[.\+\](\)\([a-z0-9][\/a-z0-9.-]\+)\)/\1$dir\2/g"
-    root_link_script="s/\(\[.\+\](\)\(\/[a-z0-9][\/a-z0-9.-]\+)\)/\1https:\/\/dtcode.club\2/g"
-    sed "$rel_link_script; $root_link_script" "$f"
+    root_link_script="s/\(\[.\+\](\)\(\/[a-z0-9][\/a-z0-9.-]\+)\)/\1https:\/\/$domain\2/g"
+    sed "$rel_link_script; $root_link_script" "$md"
 }
 
 rm -- "$root_dir/sitemap.md"
