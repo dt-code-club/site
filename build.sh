@@ -4,13 +4,14 @@
 # - pandoc
 # - tree
 
-root_dir=srv
+root_dir='srv'
 
 [ "$1" = '-r' ] && rebuild=1
 
 gen_html() {
     md="$1.md"
-    if [ "$(basename "$1")" = index ] || [ "$(basename "$1")" = not_found ]; then
+    basename=$(basename "$1")
+    if [ "$basename" = index ] || [ "$basename" = not_found ]; then
         html="$1.html"
     else
         html="$1/index.html"
