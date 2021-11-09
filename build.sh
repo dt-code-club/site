@@ -67,7 +67,8 @@ write_abs_links() {
     # File names *must* be lowercase
     # and start with a letter or number,
     # and they may only contain letters, numbers, hyphens, and dots
-    sed "$rel_link_script; $root_link_script" "$md"
+    sed "$rel_link_script; $root_link_script" "$md" |
+        pandoc --output="$pdf" --defaults='etc/pdf.yaml'
 }
 
 # Remove sitemap.md to prevent it from being built twice
