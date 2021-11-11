@@ -28,7 +28,7 @@ gen_html() {
     fi
 
     echo "Generating $html..."
-    mkdir --parents "$(dirname "$html")"
+    mkdir -p "$(dirname "$html")"
     pandoc --output="$html" --defaults='etc/html.yaml' -- "$md"
 }
 
