@@ -35,7 +35,7 @@ An item can be accessed by using `name[#]`,
 where `name` is the name of the tuple
 and `#` is the index number of the item.
 
-```
+```python
 print(my_tuple[0])
 print(my_tuple[1])
 print(my_tuple[2])
