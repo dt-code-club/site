@@ -152,9 +152,6 @@ Using `.remove()`, remove `"apples"`.
 Don't forget to use `print(shop_list)` in between lines
 to see the contents of the shopping list at different stages!
 
-For something slightly more challenging,
-try to remove the second item of the shopping list using its index.
-
 ## Answer
 
 The `print()` lines aren't necessary,
@@ -172,12 +169,5 @@ shop_list.append("bread")
 print(shop_list)
 
 shop_list.remove("apples")
-print(shop_list)
-```
-
-For the slightly more challenging question:
-
-```python
-shop_list.remove(shop_list[1])
 print(shop_list)
 ```
