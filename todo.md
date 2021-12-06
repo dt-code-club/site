@@ -12,4 +12,5 @@
 - Metadata
     - Display author and date in HTML
     - Description
+- Link to PDF and Markdown formats
 - Copyright
