@@ -29,7 +29,7 @@ can grasp the basics of programming,
 once everyone is able to transform their ideas into code,
 the topics we explore afterwards
 are suggested and decided by club members,
-according to their own interest!
+according to their own interests!
 
 All skill levels are welcome,
 and no coding knowledge or experience is required.
