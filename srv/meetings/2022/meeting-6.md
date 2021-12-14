@@ -1,225 +1,206 @@
-% Python Lesson #6:
-    Miscellaneous (Comments, F-strings, Other Operators, Truthy Falsy, Dictionaries)
+% Python Lesson #6: Dictionaries and miscellaneous
 % Eric Y.
 % December 9, 2021
 
 This lesson will cover miscellaneous topics
-that could not fit into previous lessons.
+that could not fit into previous lessons
+and introduce the dictionary data structure.
 
 ## Comments
 
-In coding, we have "commenting",
-which makes the computer ignore the line of code.
-You can use this to write notes for potential reviewers of your code,
-and they are crucial in writing readable code.
-To comment out lines,
-begin them with `#`
-or surround a block of code with `''' '''` like this:
-
-# This line is a comment
+In coding, we have **commenting**,
+which makes the computer ignore a part of the code.
+Comments can be used leave notes or explanations
+or to disable a section of the code without removing it.
+To comment out a single line,
+prepend it with an octothorpe (`#`),
+and to comment out multiple lines,
+surround a block of code with three quotes (`"""`):
 
 ```python
-'''
-Any line between these triple quotation marks is a comment
-'''
-```
+# This line is single-line a comment
 
-In the IDLE editor,
-you can highlight a chunk of code
-and press `Alt + 3` to comment
-and `Alt + 4` to uncomment code.
-These shortcuts can be accessed
-through Format tab at the top as well.
+"""
+print("Any line between these triple quotation marks")
+print("will be ignored by Python")
+"""
+```
 
 ## F-strings
 
-In python, we can "concatenate" strings using the `+` sign.
+In Python, we can **concatenate** strings using the `+` operator.
 For example:
 
 ```python
 print("Hello " + "world!")
+# Prints "Hello world!"
 
 subject = "everyone!"
 print("Hello " + subject)
+# Prints "Hello everyone!"
 ```
 
 However, this can get awkward
-when adding many segments together.
-To make your code more readable and concise,
-f-strings (formatted string literals) are much better.
+when adding many segments together,
+where f-strings (formatted string literals)
+become more readable and concise.
 They begin with an `f` before the first quotation mark
-and use curly braces to contain expressions
-that will be replaced with their values.
-For example:
+and use curly braces (`{}`) to contain expressions
+that will be replaced with their values
+(automatically converted to strings if neccesary):
 
 ```python
 subject = "everyone!"
 print(f"Hello {subject}")
+# Prints "Hello everyone!"
 ```
 
-## Other operators
+## Operators
 
 ### Math operators
 
-- Exponent: `**` (e.g. `2 ** 3 == 8`)
-- Modulo: `%` (divides two numbers and returns the remainder,
-  e.g. `5 % 2 == 1`)
+- `**`: exponent
+- `%`: modulo, returns remainder after division
+
+```python
+print(2 ** 3)
+# Prints 8
+print(5 % 2)
+# Prints 1
+```
 
 ## Boolean operators
 
 Boolean operators are used to combine conditional statements:
 
-- `and`: Returns `True` if both statements are true
+- `and`: returns `True` if and only if both values are true
+- `or`: returns `True` if at least one of the values is true
+- `not`: returns opposite of value; reverses the result
 
 ```python
-#Returns True
-if 0 == 0 and 1 == 1:
-    print(True)
-else:
-    print(False)
+print(True and True)
+# Prints True
 
-#Returns False
-if 0 == 0 and 1 == 0:
-    print(True)
-else:
-    print(False)
+print(True and False)
+# Prints False
+
+print(True or False)
+# Prints True
+
+print(False or False)
+# Prints False
+
+print(not False)
+# Prints True
 ```
 
-- `or`: Returns `True` if one of the statements is true
+## Truthy and falsy values
+
+By default, most values **evaluate** to `True`,
+with the exception of mainly `False`, `0`,
+and empty sequences (strings, tuples, lists, etc),
+which evaluate to `False`.
+
+Values can be called **truthy** or **falsy**
+because they evaluate to `True` or `False`
+even though they may not themselves be
+the boolean values `True` or `False`.
+
+Conditional statements evaluate
+whether something is truthy or falsy,
+so it is possible to, for example,
+directly pass in a value to an if statement
+without comparing it:
 
 ```python
-#Returns True
-if 0 == 0 or 1 == 0:
-    print(True)
-else:
-    print(False)
-
-#Returns False
-if 0 == 1 or 1 == 0:
-    print(True)
-else:
-    print(False)
+num = 2021
+if num:
+    print("num is not zero!")
+# Prints "num is not zero!"
 ```
-
-- `not`: Reverses the result, returns `False` if the statement is true
-
-```python
-#Returns True
-if not 1 == 0:
-    print(True)
-else:
-    print(False)
-
-#Returns False
-if not 1 == 1:
-    print(True)
-else:
-    print(False)
-```
-
-## Truthy Falsy
-
-By default, strings, filled sequences, and numbers return `True`
-and empty sequences and 0 return `False`.
-If statements evaluate whether something is `True`,
-so you don't need to compare expressions
-to Boolean values using `==`.
-An example:
-
-```python
-res = False
-if res:
-    print("It is True")
-else:
-    print("It is False")
-```
-
-If you wanted to see whether something is `False`,
-the `not` operator can be used after the `if`.
 
 Make sure to avoid using quotation marks
-when using the Boolean values `True` or `False`
-as it will always return `True`.
+when using boolean values,
+as non-empty strings evaluate to `True`!
 
 ```python
-res = "False"
-if res:
-    print("It is True")
-else:
-    print("It is False")
+if "False":
+    print("It is True!")
+# Prints "It is True!"
 ```
 
-These are called "Truthy Falsy" values
-because they are not the Boolean `True` `False` values themselves.
-They instead return `True` or `False` when evaluated.
+This can be used to check whether a list is empty:
 
 ```python
-# All of these return True
-if 1 and ("Yes") and ["Yes"]:
-    print("This will print")
-
-# None of these return True
-if 0 or () or []:
-    print("This won't print")
+my_list = []
+if not my_list:
+    print("my_list is empty!")
+# Prints "my_list is empty!"
 ```
 
-Overall, knowing about this can make our code more concise.
+Evaluating truthy and falsy values
+can make code more concise and terse,
+but it can also reduce readability,
+so don't make sure not to overuse this!
 
-## Dictionaries -- Made With {}
+## Dictionaries
 
 Dictionaries are used to store key-value pairs.
 The key can be any immutable value (usually a string or number)
-and the value can be any data type/structure.
+and the value can be any value.
 Think about it like an actual dictionary:
 The "key" would be the word,
 and the "value" would be its definition.
 You can't have duplicate keys,
 but you can have duplicate values.
-Each pair is divided by a colon,
+
+Dictionaries are created with curly braces (`{}`),
+each key-value pair is separated by a colon,
 and pairs are separated by commas.
-For example:
 
 ```python
 grocery_list = {
-    "oranges" : "$2",
-    "mangos" : "$5",
-    "avocados" : "$4",
-    "grapes" : "$4"
+    "oranges": "$2",
+    "mangos": "$5",
+    "avocados": "$4",
+    "grapes": "$4",
 }
 print(grocery_list)
 ```
 
 This prints out the dictionary as it is,
-but if we want them in pairs to use
-we need the `.items()` method:
+but if we want to access the keys and values,
+we can use the `.items()` method:
 
 ```python
 print(grocery_list.items())
 ```
 
 After printing this,
-we can see that the method turns the dictionary into a list
-and key-value pairs into tuples.
-We can then use the tuples in something like this:
+we can see that the method turns the dictionary
+into a list of tuples for each key-value pair.
+We can then use the tuples to do something like this:
 
 ```python
 for food, cost in grocery_list.items():
-##Without an f-string: print("The " + food + " cost " + cost)
-    print(f"The {food} cost {cost}")
+    print(f"The {food} cost {cost}!")
 ```
 
-Here, the values in each tuple are assigned to be food and cost.
-For every tuple, an f-string containing the food and cost gets printed.
+Here, for each tuple,
+the key is assigned to `food`
+and the value is assigned to `cost`,
+and a string is printed using these.
 
 To get a specific value,
 we can use its key and the `.get()` method.
 
 ```python
-print(grocery_list.get("oranges"))
+cost_of_oranges = grocery_list.get("oranges")
+print(f"Oranges cost {cost_of_oranges}!")
 ```
 
-To add a new pair to the dictionary,
-it looks like this:
+To add a new pair to the dictionary
+or change the value of an existing pair:
 
 ```python
 grocery_list["crackers"] = "$3"
@@ -229,25 +210,23 @@ print(grocery_list)
 To remove an item,
 we can use its key and the `.pop()` method.
 It returns the value popped.
-The following prints $4, and then the updated dictionary:
 
 ```python
-print(grocery_list.pop("avocados"))
-print(grocery_list)
+cost_of_avocados = grocery_list.pop("avocados")
+print(f"Removed avocados, which costed {cost_of_avocados}!")
 ```
 
 ## Try it!
 
 Create an empty dictionary,
-then fill it with 3 food items (as strings)
+then fill it with three food items (as strings)
 along with their prices (as integers)
 using other lines of code.
 Create a function that takes in a grocery list like this
 and returns the items with even prices.
 It can return it as a list or as strings.
 
-Hint: It may be helpful to create an empty list named res
-and to use the % operator!
+Hint: Use the `%` operator to see if an integer is even!
 
 ## Answer
 
@@ -267,21 +246,16 @@ def receipt(grocery_list):
 
 print(receipt(dictionary))
 ```
+## Todo
 
-It's possible to have a different looking answer.
-Also, the line that checks to see
-whether the cost is even or not
-can be simplified to this:
-
-```python
-if not cost % 2:
-```
-
-By default, `0` is a `False` value.
-If the cost divided by `2` leaves a remainder of 0
-it would be `False`,
-but since the not operator precedes it,
-the result is reversed.
-Even numbers then return `True`,
-and the item is added to the list.
+- Order of boolean operations
+- `in` operator
+- Multiple assignment is not explained
+- `for key in dict` might be better than `.items()`
+  because people already know how that works (from lists)
+  and do not need to learn new methods
+- [`.get()` vs square brackets (`[]`)](https://stackoverflow.com/q/11041405/9281985)
+    - Consistency with lists as well as changing dictionary values
+- How different can the document be from the actual lesson?
+- Simplify/shorten lesson maybe? somehow???
 
