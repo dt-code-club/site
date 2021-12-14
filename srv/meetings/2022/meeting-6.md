@@ -1,4 +1,4 @@
-% Python Lesson #6: Dictionaries and miscellaneous
+% Python Lesson #6: Dictionaries and Miscellaneous
 % Eric Y.
 % December 9, 2021
 
@@ -47,7 +47,7 @@ become more readable and concise.
 They begin with an `f` before the first quotation mark
 and use curly braces (`{}`) to contain expressions
 that will be replaced with their values
-(automatically converted to strings if neccesary):
+(automatically converted to strings if necessary):
 
 ```python
 subject = "everyone!"
