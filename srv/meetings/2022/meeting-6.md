@@ -69,7 +69,7 @@ print(5 % 2)
 # Prints 1
 ```
 
-## Boolean operators
+### Boolean operators
 
 Boolean operators are used to combine conditional statements:
 
