@@ -1,4 +1,4 @@
-% Canadian Computing Competition
+% Canadian Computing Competition - Part 1
 % Alex W.
 % January 13, 2021
 
@@ -8,7 +8,7 @@ held by the University of Waterloo,
 taken each year in February
 by students across Canada.
 
-All the past contests can be found at <https://cemc.uwaterloo.ca/contests/past_contests.html#ccc>.
+All the past contests can be found at [here](https://cemc.uwaterloo.ca/contests/past_contests.html#ccc).
 There is a junior and senior competition,
 each three hours long with five questions
 that increase in difficulty.
