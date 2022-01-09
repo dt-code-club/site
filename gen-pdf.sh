@@ -1,6 +1,6 @@
 #!/bin/sh
 
-md="$1.md"
-pdf="$1.pdf"
+md="$1"
+pdf="${md%.md}.pdf"
 
 pandoc "$md" --output="$pdf" --defaults='etc/pdf.yaml'
