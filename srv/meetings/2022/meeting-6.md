@@ -76,6 +76,7 @@ Boolean operators are used to combine conditional statements:
 - `and`: returns `True` if and only if both values are true
 - `or`: returns `True` if at least one of the values is true
 - `not`: returns opposite of value; reverses the result
+- `in`: returns `True` if a value is found in a sequence
 
 ```python
 print(True and True)
@@ -92,6 +93,12 @@ print(False or False)
 
 print(not False)
 # Prints True
+
+print(True in [True, False])
+# Prints True
+
+print(True in [False, False])
+# Prints False
 ```
 
 ## Truthy and falsy values
@@ -143,6 +150,20 @@ can make code more concise and terse,
 but it can also reduce readability,
 so don't make sure not to overuse this!
 
+## Multiple Assignment
+
+To assign multiple values to multiple variables at once,
+commas can be used for multiple assignment. 
+Each variable corresponds to the value with the matching index
+on the other side of the `=` sign.
+
+```python
+num_1, num_2 = 0, 1
+print(num_1)
+print(num_2)
+# Prints 0 and 1 on separate lines
+```
+
 ## Dictionaries
 
 Dictionaries are used to store key-value pairs.
@@ -166,6 +187,7 @@ grocery_list = {
     "grapes": "$4",
 }
 print(grocery_list)
+# Prints {'oranges': '$2', 'mangos': '$5', 'avocados': '$4', 'grapes': '$4'}
 ```
 
 This prints out the dictionary as it is,
@@ -174,6 +196,7 @@ we can use the `.items()` method:
 
 ```python
 print(grocery_list.items())
+# Prints dict_items([('oranges', '$2'), ('mangos', '$5'), ('avocados', '$4'), ('grapes', '$4')])
 ```
 
 After printing this,
@@ -184,6 +207,11 @@ We can then use the tuples to do something like this:
 ```python
 for food, cost in grocery_list.items():
     print(f"The {food} cost {cost}!")
+# Prints:
+"The oranges cost $2!"
+"The mangos cost $5!"
+"The avocados cost $4!"
+"The grapes cost $4!"
 ```
 
 Here, for each tuple,
@@ -192,11 +220,27 @@ and the value is assigned to `cost`,
 and a string is printed using these.
 
 To get a specific value,
-we can use its key and the `.get()` method.
+we can use its key and the `.get()` method
+or its key and `[]`.
 
 ```python
 cost_of_oranges = grocery_list.get("oranges")
 print(f"Oranges cost {cost_of_oranges}!")
+# Prints "Oranges cost $2!"
+
+cost_of_oranges = grocery_list["oranges"]
+print(f"Oranges cost {cost_of_oranges}!")
+# Prints "Oranges cost $2!"
+```
+
+If the value is missing, `.get()` will return a default 
+value of None, while `[]` will return an error. 
+The default value for `.get()`
+can be changed by indicating it after the key:
+
+```python
+print(grocery_list.get("bananas", "No price has been set."))
+# Prints "No price has been set."
 ```
 
 To add a new pair to the dictionary
@@ -205,6 +249,7 @@ or change the value of an existing pair:
 ```python
 grocery_list["crackers"] = "$3"
 print(grocery_list)
+# Prints the dictionary with "crackers": "$3" as a new pair
 ```
 
 To remove an item,
@@ -214,6 +259,7 @@ It returns the value popped.
 ```python
 cost_of_avocados = grocery_list.pop("avocados")
 print(f"Removed avocados, which costed {cost_of_avocados}!")
+# Prints "Removed avocados, which costed $4!"
 ```
 
 ## Try it!
