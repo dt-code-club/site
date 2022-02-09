@@ -43,7 +43,7 @@ print("Hello " + subject)
 However, this can get awkward
 when adding many segments together,
 where f-strings (formatted string literals)
-become more readable and concise.
+are more readable and concise.
 They begin with an `f` before the first quotation mark
 and use curly braces (`{}`) to contain expressions
 that will be replaced with their values
@@ -76,7 +76,6 @@ Boolean operators are used to combine conditional statements:
 - `and`: returns `True` if and only if both values are true
 - `or`: returns `True` if at least one of the values is true
 - `not`: returns opposite of value; reverses the result
-- `in`: returns `True` if a value is found in a sequence
 
 ```python
 print(True and True)
@@ -93,19 +92,28 @@ print(False or False)
 
 print(not False)
 # Prints True
+```
 
-print(True in [True, False])
+### In operator
+
+The `in` operator returns `True`
+if a value is found in a sequence (strings, tuples, lists, etc).
+
+```python
+print("f" in "Hello world!")
+# Prints False
+
+print("Hel" in "Hello world!")
 # Prints True
 
-print(True in [False, False])
-# Prints False
+print("banana" in ["apple", "banana", "coconut", "dagger"])
+# Prints True
 ```
 
 ## Truthy and falsy values
 
 By default, most values **evaluate** to `True`,
-with the exception of mainly `False`, `0`,
-and empty sequences (strings, tuples, lists, etc),
+with the exception of mainly `False`, `0`, and empty sequences,
 which evaluate to `False`.
 
 Values can be called **truthy** or **falsy**
@@ -158,99 +166,89 @@ Each variable corresponds to the value with the matching index
 on the other side of the `=` sign.
 
 ```python
-num_1, num_2 = 0, 1
+num_1, num_2 = 123, 456
 print(num_1)
 print(num_2)
-# Prints 0 and 1 on separate lines
+# Prints 123 and 456 on separate lines
+
+fruit_1, fruit_2, fruit_3 = ["apple", "banana", "coconut"]
+print(fruit_1, fruit2, fruit_3)
+# Prints apple, followed by banana, followed by coconut
 ```
 
 ## Dictionaries
 
 Dictionaries are used to store key-value pairs.
-The key can be any immutable value (usually a string or number)
-and the value can be any value.
-Think about it like an actual dictionary:
-The "key" would be the word,
-and the "value" would be its definition.
+The key must be an immutable datatype (usually a string or number)
+but the value can be any value.
 You can't have duplicate keys,
 but you can have duplicate values.
+If you think about it like an actual dictionary,
+the key would be the word,
+and the value would be its definition.
 
 Dictionaries are created with curly braces (`{}`),
 each key-value pair is separated by a colon,
-and pairs are separated by commas.
+and pairs are separated by commas:
 
 ```python
 grocery_list = {
-    "oranges": "$2",
-    "mangos": "$5",
-    "avocados": "$4",
-    "grapes": "$4",
+    "oranges": 2,
+    "mangos": 5,
+    "avocados": 4,
+    "grapes": 4,
 }
 print(grocery_list)
-# Prints {'oranges': '$2', 'mangos': '$5', 'avocados': '$4', 'grapes': '$4'}
+# Prints {'oranges': 2, 'mangos': 5, 'avocados': 4, 'grapes': 4}
 ```
 
-This prints out the dictionary as it is,
-but if we want to access the keys and values,
-we can use the `.items()` method:
+### Getting values
+
+We can use a key to get a value from a dictionary,
+similarly to how we can use indexes to retrieve items lists:
 
 ```python
-print(grocery_list.items())
-# Prints dict_items([('oranges', '$2'), ('mangos', '$5'), ('avocados', '$4'), ('grapes', '$4')])
+cost_of_oranges = grocery_list["oranges"]
+print(f"Oranges cost ${cost_of_oranges}!")
+# Prints Oranges cost $2!
 ```
 
-After printing this,
-we can see that the method turns the dictionary
-into a list of tuples for each key-value pair.
-We can then use the tuples to do something like this:
-
-```python
-for food, cost in grocery_list.items():
-    print(f"The {food} cost {cost}!")
-# Prints:
-"The oranges cost $2!"
-"The mangos cost $5!"
-"The avocados cost $4!"
-"The grapes cost $4!"
-```
-
-Here, for each tuple,
-the key is assigned to `food`
-and the value is assigned to `cost`,
-and a string is printed using these.
-
-To get a specific value,
-we can use its key and the `.get()` method
-or its key and `[]`.
+We can also use the `.get()` method:
 
 ```python
 cost_of_oranges = grocery_list.get("oranges")
-print(f"Oranges cost {cost_of_oranges}!")
-# Prints "Oranges cost $2!"
-
-cost_of_oranges = grocery_list["oranges"]
-print(f"Oranges cost {cost_of_oranges}!")
-# Prints "Oranges cost $2!"
+print(f"Oranges cost ${cost_of_oranges}!")
+# Prints Oranges cost $2!
 ```
 
-If the value is missing, `.get()` will return a default 
-value of None, while `[]` will return an error. 
-The default value for `.get()`
-can be changed by indicating it after the key:
+The difference between square brackets and `.get()`
+is that if the value is missing,
+`[] will throw an error,
+while `.get()` will return a default value,
+which can be set by passing it a second argument.
 
 ```python
-print(grocery_list.get("bananas", "No price has been set."))
-# Prints "No price has been set."
+cost_of_bananas = grocery_list["bananas"]
+# KeyError: 'bananas'
+
+cost_of_bananas = grocery_list.get("bananas", "0")
+print(f"Bananas cost ${cost_of_oranges}!!!")
+# Prints Bananas cost $0!!!
 ```
 
-To add a new pair to the dictionary
+### Setting values
+
+To add a new key-value pair to the dictionary
 or change the value of an existing pair:
 
 ```python
-grocery_list["crackers"] = "$3"
+grocery_list["grapes"] = 10000
+grocery_list["crackers"] = 3
 print(grocery_list)
-# Prints the dictionary with "crackers": "$3" as a new pair
+# Prints {'oranges': 2, 'mangos': 5, 'avocados': 4, 'grapes': 10000, 'crackers': 3}
 ```
+
+### Removing values
 
 To remove an item,
 we can use its key and the `.pop()` method.
@@ -258,9 +256,45 @@ It returns the value popped.
 
 ```python
 cost_of_avocados = grocery_list.pop("avocados")
-print(f"Removed avocados, which costed {cost_of_avocados}!")
+print(f"Removed avocados, which costed ${cost_of_avocados}!")
 # Prints "Removed avocados, which costed $4!"
 ```
+
+### Iterating through dictionaries
+
+We can also iterate through a dictionary using keys:
+
+```python
+for food in grocery_list.items():
+    print(f"The {food} cost ${grocery_list['food']}!")
+# Prints The oranges cost $2!
+# Prints The mangos cost $5!
+# Prints The grapes cost $10000!
+# Prints The crackers cost $3!
+```
+
+The `.items()` method returns the dictionary as a list, with a tuple in place of each key-value pair.
+
+```python
+print(grocery_list.items())
+# Prints dict_items([('oranges', '$2'), ('mangos', '$5'), ('avocados', '$4'), ('grapes', '$4')])
+```
+
+We can use multiple assignment on the tuples to do something like this:
+
+```python
+for food, cost in grocery_list.items():
+    print(f"The {food} cost ${cost}!")
+# Prints The oranges cost $2!
+# Prints The mangos cost $5!
+# Prints The grapes cost $10000!
+# Prints The crackers cost $3!
+```
+
+Here, for each tuple,
+the key is assigned to `food`
+and the value is assigned to `cost`,
+and a string is printed using these.
 
 ## Try it!
 
@@ -292,16 +326,4 @@ def receipt(grocery_list):
 
 print(receipt(dictionary))
 ```
-## Todo
-
-- Order of boolean operations
-- `in` operator
-- Multiple assignment is not explained
-- `for key in dict` might be better than `.items()`
-  because people already know how that works (from lists)
-  and do not need to learn new methods
-- [`.get()` vs square brackets (`[]`)](https://stackoverflow.com/q/11041405/9281985)
-    - Consistency with lists as well as changing dictionary values
-- How different can the document be from the actual lesson?
-- Simplify/shorten lesson maybe? somehow???
 
