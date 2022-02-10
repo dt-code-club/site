@@ -40,7 +40,7 @@ gen_sitemap() {
         echo
         echo '```'
         echo '.'
-        tree --charset='ascii' -- "$root_dir" | tail --lines='+2'
+        tree -- "$root_dir" | tail -n '+2'
         echo '```'
     } > $root_dir/sitemap.md
     gen_html "$root_dir/sitemap"
