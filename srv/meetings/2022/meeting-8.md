@@ -25,16 +25,14 @@ Then go to <https://discord.com/developers/applications>,
 sign in, click "Applications", then click "New Application".
 You can name it whatever you'd like!
 
-![New Application](https://cdn.discordapp.com/attachments/784512962152235019/946275585779449856/1-1.png)
-
-![Name](https://cdn.discordapp.com/attachments/784512962152235019/946275586014339092/1-2.png)
+![Create and name your application in Discord's Developer Portal!](/img/2022/create_discord_application.png)
 
 Go down to "Bot",
-and click "Add Bot" to create the actual discord bot with its own profile.
+and click "Add Bot" to create the actual Discord bot with its own profile.
 
-![Add Bot](https://cdn.discordapp.com/attachments/784512962152235019/946275586270187530/1-3.png)
+![Add a bot to the application.](/img/2022/add_discord_bot.png)
 
-![Bot Profile](https://cdn.discordapp.com/attachments/784512962152235019/946275586500882492/1-4.png)
+![Your bot profile has been created!](/img/2022/discord_bot_profile.png)
 
 Scroll down to "Privileged Gateway Intents",
 then turn on all three sliders.
@@ -47,18 +45,18 @@ Select "bot" and "Administrator" to give it administrator privileges.
 You can select more specific permissions if you'd like,
 but this will let it do anything we program it to do.
 
-![URL Generator](https://cdn.discordapp.com/attachments/784512962152235019/946275586970619944/1-6.png)
+![Generate an URL to add your bot.](/img/2022/discord_url_generator.png)
 
 Copy and paste the generated URL into a new tab,
 select your test server, and invite your bot.
 
-![Select Server](https://cdn.discordapp.com/attachments/784512962152235019/946275587268423680/1-7.png)
+![Select server to which to add your bot.](/img/2022/add_bot_to_server.png)
 
-![Authorize](https://cdn.discordapp.com/attachments/784512962152235019/946275587557847081/1-8.png)
+![Authorize bot.](/img/2022/authorize_bot.png)
 
 You should see your bot in your server now!
 
-![Bot in Server](https://cdn.discordapp.com/attachments/784512962152235019/946275587805282344/1-9.png)
+![Your bot has joined your server!](/img/2022/bot_in_server.png)
 
 ### Replit Setup
 
@@ -68,7 +66,7 @@ Select Python, name your repl, then click "Create Repl".
 
 ![Replit Homepage](https://cdn.discordapp.com/attachments/784512962152235019/946275694810370089/1-10.png)
 
-![Create Repl](https://cdn.discordapp.com/attachments/784512962152235019/946275695091417138/1-11.png")
+![Create Repl](https://cdn.discordapp.com/attachments/784512962152235019/946275695091417138/1-11.png)
 
 Next, connect the bot to the repl
 by making the bot's token an environment variable.
@@ -81,7 +79,7 @@ won't be able to access the token.
 
 First, go back to the Discord bot's page and click "Copy" under Token.
 
-![Copy Token](https://cdn.discordapp.com/attachments/784512962152235019/946275695309488158/1-12.png)
+![Copy your bot's token.](/img/2022/copy_bot_token.png)
 
 Under "Secrets" in the sidebar of Replit,
 name the key `TOKEN` and paste the token into value.
