@@ -20,13 +20,8 @@ while getopts 'f' opt; do
 done
 
 gen_html() {
-	md="$1.md"
-	basename=$(basename "$1")
-	if [ "$basename" = index ] || [ "$basename" = not_found ]; then
-		html="$1.html"
-	else
-		html="$1/index.html"
-	fi
+	md=$1
+	html=$(basename "${md%.md}").html
 
 	# If the HTML file exists
 	# and is newer than both the markdown source and the template,
@@ -38,7 +33,6 @@ gen_html() {
 	fi
 
 	echo "Generating $html..."
-	mkdir -p "$(dirname "$html")"
 	pandoc --output="$html" --defaults='etc/html.yaml' -- "$md"
 }
 
@@ -87,7 +81,7 @@ write_full_links() {
 rm -f -- "$root_dir/sitemap.md"
 # This will not work on file names containing newlines!
 find "$root_dir" -name '*.md' | while read -r f; do
-	gen_html "${f%.md}"
+	gen_html "$f"
 	# write_full_links "${f%.md}"
 done
 gen_sitemap
