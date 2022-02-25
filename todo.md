@@ -2,7 +2,6 @@
 
 - Merge Home, About, and Join pages
 - Build script
-    - Replace rebuild.sh with CLI flag
     - Generate PDFs
     - Sitemap
 - Create News & Announcements page
