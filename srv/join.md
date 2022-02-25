@@ -2,7 +2,7 @@
 title: Sign Up
 ---
 
-*You may want to read our short [about page](/about/) first.*
+*You may want to read our short [about page](/about.html) first.*
 
 Ready to sign up?  Great!!!
 
@@ -21,7 +21,8 @@ you may contact us and we'll gladly reserve a seat for you the next week!
 
 Unavailable to attend meetings?
 Don't worry!
-All our meetings are posted [here](/meetings/),
+The content covered in all our meetings
+are posted to the [archive](/2022.html),
 and you can discuss and find help
 in our active [Discord server](https://discord.gg/W9qvWmcuRn)
 as if you were at our meetings in person!

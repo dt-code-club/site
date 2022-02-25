@@ -8,7 +8,7 @@ We are the David Thompson Code Club,
 bringing students together over a shared passion for technology
 since 2020!
 
-Click [here](/about/) for more details!
+Click [here](/about.html) for more details!
 
 ## News
 
@@ -16,7 +16,7 @@ Coming soon!
 
 ## Potential activities
 
-- [Basic Python lessons](/python-intro/)
+- Basic Python lessons
 - Canadian Computing Contest (CCC) practice
 - Website design
 - Discord bots
@@ -25,4 +25,4 @@ Coming soon!
 
 ## Sign up!
 
-Visit [here](/join/) for instructions to sign up!
+Visit [here](/join.html) for instructions to sign up!
