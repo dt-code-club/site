@@ -17,8 +17,6 @@ and a Discord account.
 
 ### Creating a bot account
 
-![Create and name your application in Discord's Developer Portal!](/img/2022/create_discord_application.png)
-
 First, you'll want to have a Discord server
 in which you can test your bot.
 If you do not already have one, make a new Discord server
@@ -29,11 +27,12 @@ Now, go to <https://discord.com/developers/applications>
 and click on "New Application".
 You can name it whatever you'd like!
 
+![Create and name your application in Discord's Developer Portal!](/img/2022/create_discord_application.png)
+
 Next, go down to the "Bot" section,
 and click "Add Bot" to create the actual Discord bot with its own profile.
 
-![Add a bot to the application.](/img/2022/add_discord_bot.png){width=45%}
-![Your bot profile has been created!](/img/2022/discord_bot_profile.png){width=45%}
+![Add a bot to the application.](/img/2022/add_discord_bot.png)
 
 Your bot has been created!
 To invite your bot into your server,
@@ -50,11 +49,10 @@ select your test server, and invite your bot.
 
 ![Select server to which to add your bot.](/img/2022/add_bot_to_server.png)
 
-![Authorize bot.](/img/2022/authorize_bot.png)
+You should see your bot in your server now,
+though it is offline!
 
-You should see your bot in your server now!
-
-![Your bot has joined your server!](/img/2022/bot_in_server.png)
+![Your bot has joined your server!](/img/2022/bot_offline.png)
 
 ### Installing discord.py
 
@@ -91,8 +89,6 @@ import discord
 
 ### Logging in
 
-![Copy your bot's token.](/img/2022/copy_bot_token.png)
-
 A Discord bot account is not unlike a user account;
 it needs to log into Discord to work.
 This can be done with a *token*.
@@ -101,6 +97,8 @@ Go back to your application in the Discord Developer Portal
 and copy the token in the "Bot" section.
 As the token is what logs the bot in,
 it is similar to a password, and should be kept private.
+
+![Copy your bot's token.](/img/2022/copy_bot_token.png)
 
 Paste it into your code and save it to a variable:
 
@@ -129,5 +127,5 @@ The library discord.py will be used for this project,
 and the documentation can be found
 at <https://discordpy.readthedocs.io/en/stable/index.html>.
 
-![You've logged your bot in!!!](https://cdn.discordapp.com/attachments/784512962152235019/946275696794300447/1-18.png)
+![You've logged your bot in!!!](/img/2022/bot_online.png)
 

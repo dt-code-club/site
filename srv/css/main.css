@@ -71,7 +71,6 @@ main code {
     font-family: var(--mono);
 }
 main pre {
-    clear: both;
     padding: 10px;
     white-space: pre-wrap;
 }
@@ -86,14 +85,9 @@ main pre > code {
 }
 
 main figure {
-    float: left;
-    max-width: 50%;
     margin: 20px;
-    clear: both;
 }
 main img {
     max-width: 100%;
 }
-h1, h2, h3, h4 {
-    clear: both;
-}
+
