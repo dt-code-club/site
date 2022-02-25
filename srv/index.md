@@ -1,8 +1,8 @@
 ---
-title: About Us
+title: Home
 ---
 
-Welcome to *DT Code Club's website*!
+*Welcome to our website!*
 
 We are the David Thompson Code Club,
 led entirely by students
