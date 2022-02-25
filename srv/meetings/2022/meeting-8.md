@@ -39,7 +39,7 @@ Your bot has been created!
 To invite your bot into your server,
 navigate to "URL Generator" under the "OAuth2" section,
 and select "bot" in "Scopes" and "Administrator" in "Bot Permissions".
-This will give the bot adminitrator permissions,
+This will give the bot administrator permissions,
 letting it do anything we program it to do;
 you can select more specific permissions if you'd like.
 
@@ -66,7 +66,7 @@ In Python, libraries are called *modules* or *packages*;
 they're nicely packaged sets of code
 that someone else has put together where 
 they've basically done all the complicated work for us.
-Uisng modules is something very common in Python programming, 
+Using modules is something very common in Python programming, 
 and you may find them useful for many projects you do.
 
 Some modules are built-in, while some you have to be installed.
@@ -93,7 +93,7 @@ import discord
 
 ![Copy your bot's token.](/img/2022/copy_bot_token.png)
 
-A Discord bot account is not unlike a user acccount;
+A Discord bot account is not unlike a user account;
 it needs to log into Discord to work.
 This can be done with a *token*.
 
@@ -120,71 +120,8 @@ token = "OTQ3MfsYsdflDoisdsfDTcc4.YhdrTt.hIdsfpJDFSifdsrelaxHmtYalL4"
 client.run(token)
 ```
 
-Run this code, and you should see your bot in your Discord server!
-
-### Events
-
-Next, make an "event" that runs
-when we start the bot with `@client.event`. 
-This function will print out the bot's username in the terminal
-once we turn the bot on, calling it `on_ready()`. 
-However, `async` makes the program asynchronous.
-This means that instead of reading the code strictly line by line, 
-the function will only be called whenever this event happens.
-Multiple things can be set up at once at a faster pace. 
-You can find out more at <https://realpython.com/python-async-features/>.
-
-```python
-@client.event
-async def on_ready():
-    print(f"Logged in as {client.user}!")
-
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-    await message.channel.send(message.content)
-```
-
-<!--
-
-### Replit Setup
-
-Go to <https://replit.com/> and login or create an account.
-Create a new repl with the "Create" button in the top left.
-Select Python, name your repl, then click "Create Repl".
-
-![Replit Homepage](https://cdn.discordapp.com/attachments/784512962152235019/946275694810370089/1-10.png)
-
-![Create Repl](https://cdn.discordapp.com/attachments/784512962152235019/946275695091417138/1-11.png)
-
-Next, connect the bot to the repl
-by making the bot's token an environment variable.
-The bot's token is like a password to control the bot, 
-so it's best to keep it private.
-We can't make our repl private without the paid version of Replit, 
-but we can make the token an environment variable
-so that people who look at the public code
-won't be able to access the token.
-
-Under "Secrets" in the sidebar of Replit,
-name the key `TOKEN` and paste the token into value.
-This is like adding a key and value to a dictionary.
-
-![Make Secret](https://cdn.discordapp.com/attachments/784512962152235019/946275695527600148/1-13.png)
-
-Insert the import and secret with the two prompts.
-You can also rename `my_secret` to `token`.
-
-![Insert Prompts](https://cdn.discordapp.com/attachments/784512962152235019/946275695703781376/1-14.png)
-
-![Rename Secret to Token](https://cdn.discordapp.com/attachments/784512962152235019/946275696018358342/1-15.png)
-
-Replit handles the downloading for us, 
-so we don't have to worry about downloading the ones we don't have. 
-The `os` library stands for operating system,
-and lets us access things like environment variables. 
-The variable `token` accesses the value that the `TOKEN` key gives us.
+Run this code,
+and you should see that your bot is now online in your Discord server!
 
 ### Turning the bot on
 
@@ -192,27 +129,5 @@ The library discord.py will be used for this project,
 and the documentation can be found
 at <https://discordpy.readthedocs.io/en/stable/index.html>.
 
-![Import Discord](https://cdn.discordapp.com/attachments/784512962152235019/946275696270008320/1-16.png)
+![You've logged your bot in!!!](https://cdn.discordapp.com/attachments/784512962152235019/946275696794300447/1-18.png)
 
-![Code](https://cdn.discordapp.com/attachments/784512962152235019/946275696559398992/1-17.png)
-
-![Bot is On](https://cdn.discordapp.com/attachments/784512962152235019/946275696794300447/1-18.png)
-
-Click run, and after Replit sets up a few more things automatically,
-you should see your bot come online in your server!
-
-## Replit
-
-To follow along with this tutorial exactly,
-you will need a [Discord](https://discord.com/)
-and [Replit](https://replit.com/) account.
-Replit is like Google Docs for code,
-so if you want to write all the code in files on your own computer, you can.
-However, using Replit will let you
-access your work no matter what computer you are on,
-and if you want to keep your bot running 24/7
-you can do so with Replit's "Hacker Plan"
-(which you can get three months for free
-from the [GitHub Student Developer Pack](https://education.github.com/pack)).
-
--->
