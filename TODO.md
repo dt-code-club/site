@@ -1,6 +1,5 @@
 # Things to do
 
-- Merge Home, About, and Join pages
 - Build script
     - Generate PDFs
     - Sitemap
