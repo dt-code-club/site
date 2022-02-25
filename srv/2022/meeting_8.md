@@ -29,7 +29,7 @@ You can name it whatever you'd like!
 
 ![Create and name your application in Discord's Developer Portal!](/img/2022/create_discord_application.png)
 
-Next, go down to the "Bot" section,
+Go down to the "Bot" section,
 and click "Add Bot" to create the actual Discord bot with its own profile.
 
 ![Add a bot to the application.](/img/2022/add_discord_bot.png)
@@ -107,6 +107,13 @@ Paste it into your code and save it to a variable:
 token = "OTQ3MfsYsdflDoisdsfDTcc4.YhdrTt.hIdsfpJDFSifdsrelaxHmtYalL4"
 ```
 
+To create the bot in Python,
+use discord.py's `discord.Client()` function,
+and save that to a variable, such as `bot` or `client`.
+
+To log in, the only thing left to do
+is to call the `.run()` method with the private token as an argument!
+
 The following code will create a Discord bot and log in:
 
 ```python
@@ -118,14 +125,14 @@ token = "OTQ3MfsYsdflDoisdsfDTcc4.YhdrTt.hIdsfpJDFSifdsrelaxHmtYalL4"
 client.run(token)
 ```
 
-Run this code,
-and you should see that your bot is now online in your Discord server!
-
-### Turning the bot on
-
-The library discord.py will be used for this project,
-and the documentation can be found
-at <https://discordpy.readthedocs.io/en/stable/index.html>.
+You should see that your bot is now online in your Discord server!
 
 ![You've logged your bot in!!!](/img/2022/bot_online.png)
+
+That's all we have time for today!
+Come back next week to explore the different things
+that you can make your Discord bot do!
+
+If you want to look ahead,
+you can try reading the [discord.py documentation](https://discordpy.readthedocs.io/en/stable/index.html)!
 
