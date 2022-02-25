@@ -46,7 +46,7 @@ the topics we explore afterwards
 are suggested and decided by club members,
 according to their own interests!
 
-## Joining
+## Join!
 
 All skill levels are welcome,
 and no coding knowledge or experience is required.
