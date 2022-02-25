@@ -21,7 +21,7 @@ done
 
 gen_html() {
 	md=$1
-	html=$(basename "${md%.md}").html
+	html=${md%.md}.html
 
 	# If the HTML file exists
 	# and is newer than both the markdown source and the template,
@@ -49,7 +49,7 @@ gen_sitemap() {
 		tree -- "$root_dir" | tail -n '+2'
 		echo '```'
 	} > "$root_dir/sitemap.md" 
-	gen_html "$root_dir/sitemap"
+	gen_html "$root_dir/sitemap.md"
 }
 
 write_full_links() {
