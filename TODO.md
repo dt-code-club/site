@@ -15,3 +15,4 @@
     - Description
 - Link to PDF and Markdown formats
 - Copyright
+- Merge with archive
