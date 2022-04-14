@@ -15,18 +15,14 @@ with more than sixty members annually!
 
 ## Meetings
 
-Club meetings are held each Thursday
+Club meetings are held each Thursday at lunch
 in Mr. Taylor's computer lab, room 305.
-Our meetings start at 11:55;
-please eat before you come,
-as eating is not permitted at the computers!
 
 Due to COVID-19 restrictions and a limited number of seats,
 we may unfortunately have to turn away students
 if too many people show up.
-If you are turned away,
-just let us know and
-we can gladly reserve a seat for you the next week!
+If you are turned away, just let us know
+and we can gladly reserve a seat for you the next week!
 
 Generally, each meeting begins with a lesson 
 explaining the fundamental concepts of the topic,
