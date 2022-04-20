@@ -15,7 +15,7 @@ is to have Python3 installed
 Python module ---
 and a Discord account.
 
-### Creating a bot account
+## Creating a bot account
 
 First, you'll want to have a Discord server
 in which you can test your bot.
@@ -54,7 +54,7 @@ though it is offline!
 
 ![Your bot has joined your server!](/img/2022/bot_offline.png)
 
-### Installing discord.py
+## Installing discord.py
 
 Discord.py is a Python library that wraps the Discord API;
 essentially, it provides an interface
@@ -87,7 +87,7 @@ and write at the top:
 import discord
 ```
 
-### Logging in
+## Logging in
 
 A Discord bot account is not unlike a user account;
 it needs to log into Discord to work.
