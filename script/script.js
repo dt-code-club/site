@@ -1,51 +1,52 @@
-var text;
-var currentTyped = "";
-var textIndex = 0;
-var mainText;
-var textLength;
-var typingInterval;
-var canUserType = false;
-
-function initText() {
-    mainText = document.getElementById("terminal")
-    console.log("helloooo")
-    text = mainText.innerText;
-    textLength = text.length
-    currentTyped = ""
-    typing()
+const terminal = document.getElementById("terminal")
+const transmissionText = document.getElementById("transmission").innerText
+async function typeLine(line, typeSpeed = 35, end = "\n") {
+    return new Promise((resolve, reject) => {
+        line += end
+        let count = 0
+        for (let i = 0; i < line.length; i++) {
+            setTimeout(() => {
+                const letter = line[i];
+                terminal.innerText += letter
+            }, i * typeSpeed)
+        }
+        setTimeout(() => { resolve() }, typeSpeed * line.length)
+    })
 }
-function updateText(caret = false) {
-    mainText.innerText = currentTyped + (caret ? "▍" : "")
-}
-function typing() {
-    canUserType = false
-    currentTyped += text[textIndex]
-    textIndex++;
-    if (textIndex + 1 == textLength) {
-        canUserType = true
-        updateText(true)
-    } else {
-        setTimeout(typing, 1)
-        updateText()
-    }
+async function sleepAsync(time) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => { resolve() }, time)
+    })
 }
 function typeKey(e) {
     if (canUserType) {
         let key = e.key
         if (key == "Enter") {
-            currentTyped += "\n"
+            runCommand(inputBuffer)
         } else if (key == "Backspace") {
-            currentTyped = currentTyped.substring(0, currentTyped.length - 1);
+            inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1);
         }
         else if (key == "Shift" || key == "Alt" || key == "Control" || key == "Meta") {
 
         }
         else {
-            currentTyped += key
+            inputBuffer += key
         }
         updateText(true)
     }
 }
 
-initText()
-document.addEventListener("keydown", typeKey)
+async function init() {
+    await typeLine(`Incoming transmission - ${transmissionText.length} bytes`, 10)
+    await sleepAsync(200)
+    await typeLine("Begin transmission...", 10)
+    await typeLine("---------------------------------------------------------------------------", 10)
+    await sleepAsync(200)
+    for (const line of transmissionText.split("\n")) {
+        await typeLine(line, 20);
+    };
+    await typeLine("---------------------------------------------------------------------------", 10)
+    await typeLine("End transmission.\n", 10)
+    await typeLine("visitor@codeclub.local:~$ ", typeSpeed = 0, end = "▍")
+}
+init()
