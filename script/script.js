@@ -51,17 +51,17 @@ async function sleepAsync(time) {
 }
 async function init() {
     canUserType = false;
-    await typeLine(`Incoming transmission - ${transmissionText.length} bytes`, /*10*/0)
+    await typeLine(`Incoming transmission - ${transmissionText.length} bytes`, 10)
     //await sleepAsync(200)
-    await typeLine("Begin transmission...", /*10*/0)
-    await typeLine("---------------------------------------------------------------------------", /*10*/0)
+    await typeLine("Begin transmission...", 10)
+    await typeLine("---------------------------------------------------------------------------", 10)
     //await sleepAsync(200)
     for (const line of transmissionText.split("\n")) {
         await typeLine(line, /*15*/0);
     };
-    await typeLine("---------------------------------------------------------------------------", /*10*/0)
+    await typeLine("---------------------------------------------------------------------------", 10)
     //await sleepAsync(200)
-    await typeLine("End transmission.\n", /*10*/0)
+    await typeLine("End transmission.\n", 10)
     canUserType = true;
     while (true) {
         let result = await input("visitor@codeclub.local:~$ ")

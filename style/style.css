@@ -15,6 +15,7 @@ body {
 
 #terminal {
     line-height: 20px;
+    overflow-y: hidden;
 }
 
 #terminal::before {
