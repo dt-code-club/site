@@ -1,6 +1,7 @@
 const terminal = document.getElementById("terminal")
 const transmissionText = document.getElementById("transmission").innerText
-const helpText = document.getElementById("help").innerText
+const dtccHelpText = document.getElementById("dtcc-help").innerText
+const osHelpText = document.getElementById("os-help").innerText
 const loaderContainer = document.querySelector(".os-loader-container")
 const caret = "▍"
 var inputBuffer = "";
@@ -52,17 +53,18 @@ async function sleepAsync(time) {
 }
 async function init() {
     canUserType = false;
-    await typeLine(`Incoming transmission - ${transmissionText.length} bytes`, 10)
-    //await sleepAsync(200)
-    await typeLine("Begin transmission...", 10)
+    await typeLine(`Incoming transmission - ${transmissionText.length} bytes`, 20)
+    await sleepAsync(200)
+    await typeLine("Begin transmission...", 20)
     await typeLine("---------------------------------------------------------------------------", 10)
-    //await sleepAsync(200)
+    await sleepAsync(200)
     for (const line of transmissionText.split("\n")) {
-        await typeLine(line, /*15*/0);
+        await typeLine(line, 15);
     };
+    await sleepAsync(200)
     await typeLine("---------------------------------------------------------------------------", 10)
-    //await sleepAsync(200)
-    await typeLine("End transmission.\n", 10)
+    await typeLine("End transmission.\n", 20)
+    await sleepAsync(200)
     canUserType = true;
     while (true) {
         let result = await input("visitor@codeclub.local:~$ ")
@@ -71,24 +73,28 @@ async function init() {
         let arguments = result.slice(1)
         commandHistory.push(result.join(" "))
         if (command == "dtcc") {
-            if (arguments[0] == "help") {
-                for (const line of helpText.split("\n")) {
+            if (arguments[0] == "help" || arguments[0] == "hp") {
+                for (const line of dtccHelpText.split("\n")) {
                     await typeLine(line, 2);
                 };
             } else {
                 await typeLine("Error: unrecognized or incomplete command line.\n", 3)
-                for (const line of helpText.split("\n")) {
+                for (const line of dtccHelpText.split("\n")) {
                     await typeLine(line, 2);
                 };
             }
         } else if (command == "os") {
-            if (arguments[0] == "activate") {
+            if (arguments[0] == "activate" || arguments[0] == "ac") {
                 await typeLine("Activating operating system GUI...", 10);
                 await sleepAsync(500);
                 loaderContainer.style.display = "initial"
+            } else if (arguments[0] == "help" || arguments[0] == "hp") {
+                for (const line of osHelpText.split("\n")) {
+                    await typeLine(line, 2);
+                };
             } else {
                 await typeLine("Error: unrecognized or incomplete command line.\n", 3)
-                for (const line of helpText.split("\n")) {
+                for (const line of osHelpText.split("\n")) {
                     await typeLine(line, 2);
                 };
             }
