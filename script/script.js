@@ -86,7 +86,7 @@ async function init() {
         } else if (command == "os") {
             if (arguments[0] == "activate" || arguments[0] == "ac") {
                 await typeLine("Activating operating system GUI...", 10);
-                await sleepAsync(500);
+                await sleepAsync(750);
                 loaderContainer.style.display = "initial"
             } else if (arguments[0] == "help" || arguments[0] == "hp") {
                 for (const line of osHelpText.split("\n")) {
@@ -98,6 +98,8 @@ async function init() {
                     await typeLine(line, 2);
                 };
             }
+        } else if (command == "echo") {
+            await typeLine(arguments.join(" "))
         } else {
             await typeLine(`"${command}" is not recognized as an internal or external command.\n`, 3);
         }
