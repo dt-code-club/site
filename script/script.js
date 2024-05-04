@@ -1,5 +1,9 @@
 const terminal = document.getElementById("terminal")
 const transmissionText = document.getElementById("transmission").innerText
+const helpText = document.getElementById("help").innerText
+const caret = "▍"
+var inputBuffer = "";
+var commandHistory = [];
 async function typeLine(line, typeSpeed = 35, end = "\n") {
     return new Promise((resolve, reject) => {
         line += end
@@ -13,40 +17,73 @@ async function typeLine(line, typeSpeed = 35, end = "\n") {
         setTimeout(() => { resolve() }, typeSpeed * line.length)
     })
 }
+async function input(prompt) {
+    return new Promise((resolve, reject) => {
+        inputBuffer = ""
+        terminal.innerText += prompt
+        let startText = terminal.innerText
+        terminal.innerText = startText + caret
+        document.addEventListener('keydown', onKeyHandler);
+        function onKeyHandler(e) {
+            let key = e.key
+            if (key == "Enter") {
+                document.removeEventListener('keydown', onKeyHandler);
+                terminal.innerText = startText + inputBuffer
+                terminal.innerText += "\n"
+                resolve(inputBuffer);
+            } else if (key == "Backspace") {
+                inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1);
+                terminal.innerText = startText + inputBuffer + caret
+            } else if (key == "Shift" || key == "Alt" || key == "Control" || key == "Meta") {
+
+            }
+            else {
+                inputBuffer += key
+                terminal.innerText = startText + inputBuffer + caret
+            }
+        }
+    })
+}
 async function sleepAsync(time) {
     return new Promise((resolve, reject) => {
         setTimeout(() => { resolve() }, time)
     })
 }
-function typeKey(e) {
-    if (canUserType) {
-        let key = e.key
-        if (key == "Enter") {
-            runCommand(inputBuffer)
-        } else if (key == "Backspace") {
-            inputBuffer = inputBuffer.substring(0, inputBuffer.length - 1);
-        }
-        else if (key == "Shift" || key == "Alt" || key == "Control" || key == "Meta") {
-
-        }
-        else {
-            inputBuffer += key
-        }
-        updateText(true)
-    }
-}
-
 async function init() {
-    await typeLine(`Incoming transmission - ${transmissionText.length} bytes`, 10)
-    await sleepAsync(200)
-    await typeLine("Begin transmission...", 10)
-    await typeLine("---------------------------------------------------------------------------", 10)
-    await sleepAsync(200)
+    canUserType = false;
+    await typeLine(`Incoming transmission - ${transmissionText.length} bytes`, /*10*/0)
+    //await sleepAsync(200)
+    await typeLine("Begin transmission...", /*10*/0)
+    await typeLine("---------------------------------------------------------------------------", /*10*/0)
+    //await sleepAsync(200)
     for (const line of transmissionText.split("\n")) {
-        await typeLine(line, 20);
+        await typeLine(line, /*15*/0);
     };
-    await typeLine("---------------------------------------------------------------------------", 10)
-    await typeLine("End transmission.\n", 10)
-    await typeLine("visitor@codeclub.local:~$ ", typeSpeed = 0, end = "▍")
+    await typeLine("---------------------------------------------------------------------------", /*10*/0)
+    //await sleepAsync(200)
+    await typeLine("End transmission.\n", /*10*/0)
+    canUserType = true;
+    while (true) {
+        let result = await input("visitor@codeclub.local:~$ ")
+        result = result.split(" ")
+        let command = result[0]
+        let arguments = result.slice(1)
+        commandHistory.push(result.join(" "))
+        if (command == "dtcc") {
+            if (arguments[0] == "help") {
+                for (const line of helpText.split("\n")) {
+                    await typeLine(line, 5);
+                };
+            } else {
+                await typeLine("Error: unrecognized or incomplete command line.\n", 3)
+                for (const line of helpText.split("\n")) {
+                    await typeLine(line, 5);
+                };
+            }
+        } else {
+            await typeLine(`"${command}" is not recognized as an internal or external command.\n`, 3);
+        }
+        console.log(commandHistory)
+    }
 }
 init()
