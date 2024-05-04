@@ -3,11 +3,16 @@
     src: url("./OverpassMono-Medium.ttf");
 }
 
-*{
+* {
     font-family: "Overpass Mono";
-    color:#45FF26;
+    color: #00ff00;
 }
 
-body{
-    background-color: #0E0E0E;
+body {
+    background-color: #020202;
+    font-size: 17px;
+}
+
+#terminal {
+    filter: url(#SphereMapTest);
 }
