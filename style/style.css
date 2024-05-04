@@ -3,6 +3,11 @@
     src: url("./OverpassMono-Medium.ttf");
 }
 
+@font-face {
+    font-family: "Outfit";
+    src: url("./Outfit.ttf");
+}
+
 * {
     font-family: "Overpass Mono";
     color: #00ff00;
@@ -21,7 +26,7 @@ body {
 #terminal::before {
     content: " ";
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -121,7 +126,7 @@ body {
 #terminal::after {
     content: " ";
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -131,4 +136,59 @@ body {
     z-index: 2;
     pointer-events: none;
     animation: flicker 0.2s infinite;
+}
+
+.os-loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #000000;
+    z-index: 100;
+}
+
+.os-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+    width: 60%;
+    background-color: #dfdfdf;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.os-loader * {
+    font-family: "Outfit";
+    color: black;
+}
+
+.loader-header {
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.loader-img {
+    width: 40%;
+    display: block;
+}
+
+.loader-bar-wrapper {
+    height: 30px;
+    width: 50%;
+    background-color: transparent;
+    border: 3px solid black;
+}
+
+.loader-bar {
+    height: 100%;
+    width: 40%;
+    background-color: black;
+    border: 1.2px solid black;
 }

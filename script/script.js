@@ -1,6 +1,7 @@
 const terminal = document.getElementById("terminal")
 const transmissionText = document.getElementById("transmission").innerText
 const helpText = document.getElementById("help").innerText
+const loaderContainer = document.querySelector(".os-loader-container")
 const caret = "▍"
 var inputBuffer = "";
 var commandHistory = [];
@@ -72,12 +73,23 @@ async function init() {
         if (command == "dtcc") {
             if (arguments[0] == "help") {
                 for (const line of helpText.split("\n")) {
-                    await typeLine(line, 5);
+                    await typeLine(line, 2);
                 };
             } else {
                 await typeLine("Error: unrecognized or incomplete command line.\n", 3)
                 for (const line of helpText.split("\n")) {
-                    await typeLine(line, 5);
+                    await typeLine(line, 2);
+                };
+            }
+        } else if (command == "os") {
+            if (arguments[0] == "activate") {
+                await typeLine("Activating operating system GUI...", 10);
+                await sleepAsync(500);
+                loaderContainer.style.display = "initial"
+            } else {
+                await typeLine("Error: unrecognized or incomplete command line.\n", 3)
+                for (const line of helpText.split("\n")) {
+                    await typeLine(line, 2);
                 };
             }
         } else {
