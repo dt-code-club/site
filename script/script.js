@@ -3,6 +3,8 @@ const transmissionText = document.getElementById("transmission").innerText
 const dtccHelpText = document.getElementById("dtcc-help").innerText
 const osHelpText = document.getElementById("os-help").innerText
 const loaderContainer = document.querySelector(".os-loader-container")
+const loaderBar = document.querySelector(".loader-bar")
+const loaderText = document.querySelector(".loader-text")
 const caret = "▍"
 const ignoreKeys = [
     'Shift', 'Control', 'Alt', 'Meta',
@@ -10,10 +12,16 @@ const ignoreKeys = [
     'Tab', 'Escape',
     'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12'
 ];
-const dev = false;
+const dev = true;
 var inputBuffer = "";
 var commandHistory = [];
 var commandIndex = 0;
+var loadingProgress = 0;
+var targetLoadingProgress = 0;
+var loadSpeed = 0.03;
+function roundTo2(num){
+    return Math.round((num + Number.EPSILON) * 100) / 100
+}
 async function typeLine(line, typeSpeed = 35, end = "\n") {
     return new Promise((resolve, reject) => {
         line += end
@@ -73,6 +81,31 @@ async function sleepAsync(time) {
         setTimeout(() => { resolve() }, time)
     })
 }
+async function loadOS(){
+    loaderText.innerHTML = "Creating lesson plans..."
+    await sleepAsync(2000);
+    targetLoadingProgress = 20;
+
+    loaderText.innerHTML = "Making the PowerPoint slides..."
+    await sleepAsync(2500);
+    targetLoadingProgress = 30;
+
+    loaderText.innerHTML = "Sleeping past 2 AM..."
+    await sleepAsync(2000);
+    targetLoadingProgress = 60;
+
+    loaderText.innerHTML = "Merging Git conflicts..."
+    await sleepAsync(1500);
+    targetLoadingProgress = 80;
+
+    loaderText.innerHTML = "Finishing up..."
+    await sleepAsync(1800);
+    targetLoadingProgress = 100;
+
+    loaderText.innerHTML = "And we're done!"
+    await sleepAsync(2000);
+    location.href="/os/"
+}
 async function init() {
     canUserType = false;
     await typeLine(`Incoming transmission - ${transmissionText.length} bytes`, dev ? 0 : 20)
@@ -110,6 +143,7 @@ async function init() {
                 await typeLine("Activating operating system GUI...", dev ? 0 : 10);
                 await sleepAsync(dev ? 0 : 750);
                 loaderContainer.style.display = "initial"
+                await loadOS();
             } else if (arguments[0] == "help" || arguments[0] == "hp") {
                 for (const line of osHelpText.split("\n")) {
                     await typeLine(line, dev ? 0 : 2);
@@ -129,4 +163,9 @@ async function init() {
         commandIndex++;
     }
 }
+function recalculateLoadingProgress(){
+    loadingProgress = loadingProgress + (targetLoadingProgress - loadingProgress) * loadSpeed;
+    loaderBar.style.width = roundTo2(loadingProgress) + "%"
+}
 init()
+setInterval(recalculateLoadingProgress,10)
