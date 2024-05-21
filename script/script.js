@@ -12,14 +12,14 @@ const ignoreKeys = [
     'Tab', 'Escape',
     'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12'
 ];
-const dev = true;
+const dev = false;
 var inputBuffer = "";
 var commandHistory = [];
 var commandIndex = 0;
 var loadingProgress = 0;
 var targetLoadingProgress = 0;
 var loadSpeed = 0.03;
-function roundTo2(num){
+function roundTo2(num) {
     return Math.round((num + Number.EPSILON) * 100) / 100
 }
 async function typeLine(line, typeSpeed = 35, end = "\n") {
@@ -81,7 +81,7 @@ async function sleepAsync(time) {
         setTimeout(() => { resolve() }, time)
     })
 }
-async function loadOS(){
+async function loadOS() {
     loaderText.innerHTML = "Creating lesson plans..."
     await sleepAsync(2000);
     targetLoadingProgress = 20;
@@ -104,7 +104,7 @@ async function loadOS(){
 
     loaderText.innerHTML = "And we're done!"
     await sleepAsync(2000);
-    location.href="/os/"
+    location.href = "/os/"
 }
 async function init() {
     canUserType = false;
@@ -163,9 +163,9 @@ async function init() {
         commandIndex++;
     }
 }
-function recalculateLoadingProgress(){
+function recalculateLoadingProgress() {
     loadingProgress = loadingProgress + (targetLoadingProgress - loadingProgress) * loadSpeed;
     loaderBar.style.width = roundTo2(loadingProgress) + "%"
 }
 init()
-setInterval(recalculateLoadingProgress,10)
+setInterval(recalculateLoadingProgress, 10)
