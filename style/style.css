@@ -26,6 +26,10 @@ body {
 #terminal {
     line-height: 20px;
     overflow-y: hidden;
+    height: 100%;
+    margin:0;
+    padding: 20px 0px;
+    box-sizing: border-box;
 }
 
 #terminal::before {
