@@ -41,28 +41,33 @@
     <pre id="terminal"></pre>
     <div style="display: none;">
         <pre id="dtcc-help">
-Usage: dtcc [COMMAND] [SWITCHES]
+Usage: dtcc [arguments] <!--[options]-->
 Activate various information and navigation help functions. Have fun!
             
 Mandatory command arguments
     contact,    con          print out our contact information.
     meeting,    meet         print out a directory of our meeting notes.
     biography,  bio          print out the full “about us” section.
-    help,       hp           print this text block.
-            
-Optional switch arguments
+    help,       -h           print this text block. 
+</pre>     
+<!--Optional switch arguments
     -f,         --force      run the commmand, no matter what.
-    -v,         --verbose    print everything that’s happening, as it’s happening.  
-        </pre>
+    -v,         --verbose    print everything that’s happening, as it’s happening.  -->
         <pre id="os-help">
-Usage: os [COMMAND] [SWITCHES]
+Usage: os [arguments] <!--[options]-->
 Provides various utilities to load the website and whatnot.
                         
 Mandatory command arguments
-    activate,   ac           activate the user interface.
-    help,       hp           print this text block.
+    activate,   -a           activate the user interface.
+    help,       -h           print this text block.
                     </pre>
+        <pre id="su-help">
+Usage: su [options] [PARAMETERS]
+su allows commands to be run with a substitute user and group ID.
 
+ Mandatory command arguments
+    username,   -u           the username to log in with.
+</pre>
         <pre id="help">
 For more information on a specific command, type [command-name] HELP
 
