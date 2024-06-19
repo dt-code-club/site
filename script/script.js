@@ -20,6 +20,7 @@ var commandIndex = 0;
 var loadingProgress = 0;
 var targetLoadingProgress = 0;
 var loadSpeed = 0.03;
+var username = "visitor"
 function roundTo2(num) {
     return Math.round((num + Number.EPSILON) * 100) / 100
 }
@@ -123,34 +124,34 @@ async function init() {
     await sleepAsync(dev ? 0 : 200)
     canUserType = true;
     while (true) {
-        let result = await input("visitor@codeclub.local:~$ ")
+        let result = await input(`${username}@codeclub.local:~$ `)
         result = result.toLowerCase().split(" ")
         let command = result[0]
         let arguments = result.slice(1)
         commandHistory.push(result.join(" "))
         if (command == "dtcc") {
-            if (arguments[0] == "help" || arguments[0] == "hp") {
+            if (arguments[0] == "help" || arguments[0] == "-h") {
                 for (const line of dtccHelpText.split("\n")) {
                     await typeLine(line, dev ? 0 : 2);
                 };
             } else {
-                await typeLine("Error: unrecognized or incomplete command line.\n", 3)
+                await typeLine("Error: unrecognized or incomplete command line.\n", 2)
                 for (const line of dtccHelpText.split("\n")) {
                     await typeLine(line, dev ? 0 : 2);
                 };
             }
         } else if (command == "os") {
-            if (arguments[0] == "activate" || arguments[0] == "ac") {
+            if (arguments[0] == "activate" || arguments[0] == "-a") {
                 await typeLine("Activating operating system GUI...", dev ? 0 : 10);
                 await sleepAsync(dev ? 0 : 750);
                 loaderContainer.style.display = "initial"
                 await loadOS();
-            } else if (arguments[0] == "help" || arguments[0] == "hp") {
+            } else if (arguments[0] == "help" || arguments[0] == "-h") {
                 for (const line of osHelpText.split("\n")) {
                     await typeLine(line, dev ? 0 : 2);
                 };
             } else {
-                await typeLine("Error: unrecognized or incomplete command line.\n", 3)
+                await typeLine("Error: unrecognized or incomplete command line.\n", 2)
                 for (const line of osHelpText.split("\n")) {
                     await typeLine(line, dev ? 0 : 2);
                 };
@@ -159,10 +160,16 @@ async function init() {
             for (const line of helpText.split("\n")) {
                 await typeLine(line, dev ? 0 : 2);
             };
+        } else if (command == "su") {
+            if (arguments.length > 0) {
+                username = arguments[0]
+            } else {
+                await typeLine("Error: unrecognized or incomplete command line.\n", 2)
+            }
         } else if (command == "echo") {
             await typeLine(arguments.join(" "))
         } else {
-            await typeLine(`"${command}" is not recognized as an internal or external command.\n`, 3);
+            await typeLine(`"${command}" is not recognized as an internal or external command.\n`, 2);
         }
         console.log(commandHistory)
         commandIndex++;
