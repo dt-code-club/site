@@ -2,6 +2,7 @@ const terminal = document.getElementById("terminal")
 const transmissionText = document.getElementById("transmission").innerText
 const dtccHelpText = document.getElementById("dtcc-help").innerText
 const osHelpText = document.getElementById("os-help").innerText
+const helpText = document.getElementById("help").innerText
 const loaderContainer = document.querySelector(".os-loader-container")
 const loaderBar = document.querySelector(".loader-bar")
 const loaderText = document.querySelector(".loader-text")
@@ -123,7 +124,7 @@ async function init() {
     canUserType = true;
     while (true) {
         let result = await input("visitor@codeclub.local:~$ ")
-        result = result.split(" ")
+        result = result.toLowerCase().split(" ")
         let command = result[0]
         let arguments = result.slice(1)
         commandHistory.push(result.join(" "))
@@ -154,6 +155,10 @@ async function init() {
                     await typeLine(line, dev ? 0 : 2);
                 };
             }
+        } else if (command == "help") {
+            for (const line of helpText.split("\n")) {
+                await typeLine(line, dev ? 0 : 2);
+            };
         } else if (command == "echo") {
             await typeLine(arguments.join(" "))
         } else {
