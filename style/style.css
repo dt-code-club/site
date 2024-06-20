@@ -21,15 +21,25 @@
 body {
     background-color: #020202;
     font-size: 17px;
+    margin: 0;
 }
 
 #terminal {
     line-height: 20px;
-    overflow-y: hidden;
-    height: 100%;
-    margin:0;
-    padding: 20px 0px;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow-y: scroll;
     box-sizing: border-box;
+}
+
+#terminal::-webkit-scrollbar {
+    display: none;
+}
+
+#terminal {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 #terminal::before {
