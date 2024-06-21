@@ -1,20 +1,20 @@
 const taskbarTimeElem = document.getElementById("taskbar-time")
 const taskbarDateElem = document.getElementById("taskbar-date")
-function pad2(string){
+function pad2(string) {
     return String(string).padStart(2, '0')
 }
-function timeHandler(){
+function timeHandler() {
     let today = new Date();
 
     // Getting time
     let hours = today.getHours()
     let meridiem = "AM"
-    if(hours > 12){
+    if (hours > 12) {
         hours -= 12
         meridiem = "PM"
     }
     hours = pad2(hours)
-    let minutes = today.getMinutes()
+    let minutes = pad2(today.getMinutes())
     let timeString = `${hours}:${minutes} ${meridiem}`
     taskbarTimeElem.innerText = timeString
 
@@ -25,4 +25,4 @@ function timeHandler(){
     let dateString = `${month}/${day}/${year}`
     taskbarDateElem.innerText = dateString
 }
-setInterval(timeHandler(),30000)
+setInterval(timeHandler(), 30000)
