@@ -83,3 +83,12 @@ nav img {
     height: 40px;
     width: 40px;
 }
+
+.window{
+    width: 60%;
+    height: 80%;
+    background-color: whitesmoke;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+}
