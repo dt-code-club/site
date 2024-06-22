@@ -105,6 +105,11 @@ nav img {
     padding: 7px;
     justify-content: left;
     align-items: center;
+    cursor: grab;
+}
+
+.window-bar:active {
+    cursor: grabbing;
 }
 
 .window-icon {

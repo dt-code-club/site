@@ -28,15 +28,38 @@ function timeHandler() {
 setInterval(timeHandler(), 30000)
 
 var heldWindow
-function windowGrabHandler(target) {
+var currentlyGrabbing = false
+var windowGrabOffset = []
+var mousePosition
+function windowGrabHandler(target, mouseInfo) {
+    currentlyGrabbing = true
     heldWindow = target
-    console.log("gayt")
+    let windowBoundingBox = heldWindow.getBoundingClientRect()
+    let windowPosition = [windowBoundingBox.x, windowBoundingBox.y]
+    mousePosition = [mouseInfo.clientX, mouseInfo.clientY]
+    windowGrabOffset = [mousePosition[0] - windowPosition[0], mousePosition[1] - windowPosition[1]]
+    console.log(windowGrabOffset)
 }
-
+function windowMoveHandler(mouseInfo) {
+    if (currentlyGrabbing) {
+        console.log(currentlyGrabbing)
+        mousePosition = [mouseInfo.clientX, mouseInfo.clientY]
+        heldWindow.style.left = mousePosition[0] - windowGrabOffset[0] + "px"
+        heldWindow.style.top = mousePosition[1] - windowGrabOffset[1] + "px"
+    }
+}
+function closeWindowFromActionButton(button) {
+    let window = button.parentElement.parentElement.parentElement
+    window.style.display = "none"
+}
 document.addEventListener("mousedown", (e) => {
     if (e.target.parentElement.className == "window-bar") {
-        windowGrabHandler(e.target.parentElement.className)
-    } else if (e.target.parentElement.parentElement.className == "window-bar") {
-        windowGrabHandler(e.target.parentElement.parentElement)
+        windowGrabHandler(e.target.parentElement.parentElement, e)
     }
 })
+
+document.addEventListener("mouseup", () => {
+    currentlyGrabbing = false;
+    heldWindow = null;
+})
+document.addEventListener("mousemove", (e) => { windowMoveHandler(e) })

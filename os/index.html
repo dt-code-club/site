@@ -30,12 +30,13 @@
 
     <div class="window">
         <div class="window-bar">
-            <img class="window-icon" src="https://assets.hackclub.com/icon-rounded.svg">
+            <img class="window-icon" draggable="false" src="https://assets.hackclub.com/icon-rounded.svg">
             <span class="window-title" id="window-title">Wow, web implementation</span>
             <div class="window-bar-action-buttons">
                 <span class="action-button" style="background-color: #46dd67;"></span>
                 <span class="action-button" style="background-color: #eedc39;"></span>
-                <span class="action-button" style="background-color: #FF5050;"></span>
+                <span class="action-button" style="background-color: #FF5050;"
+                    onclick="closeWindowFromActionButton(this)"></span>
             </div>
         </div>
         <iframe src="https://dtcode.club"></iframe>
