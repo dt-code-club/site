@@ -26,3 +26,17 @@ function timeHandler() {
     taskbarDateElem.innerText = dateString
 }
 setInterval(timeHandler(), 30000)
+
+var heldWindow
+function windowGrabHandler(target) {
+    heldWindow = target
+    console.log("gayt")
+}
+
+document.addEventListener("mousedown", (e) => {
+    if (e.target.parentElement.className == "window-bar") {
+        windowGrabHandler(e.target.parentElement.className)
+    } else if (e.target.parentElement.parentElement.className == "window-bar") {
+        windowGrabHandler(e.target.parentElement.parentElement)
+    }
+})
