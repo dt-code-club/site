@@ -31,6 +31,9 @@ var heldWindow
 var currentlyGrabbing = false
 var windowGrabOffset = []
 var mousePosition
+var isIconActionsOpen = false
+const iconActions = document.getElementById("icon-actions")
+const windowIcon = document.getElementById("window-icon")
 function windowGrabHandler(target, mouseInfo) {
     currentlyGrabbing = true
     heldWindow = target
@@ -52,9 +55,16 @@ function closeWindowFromActionButton(button) {
     let window = button.parentElement.parentElement.parentElement
     window.style.display = "none"
 }
+windowIcon.addEventListener("click", (e) => {
+    isIconActionsOpen = true
+    iconActions.style.display = ""
+})
 document.addEventListener("mousedown", (e) => {
     if (e.target.parentElement.className == "window-bar") {
         windowGrabHandler(e.target.parentElement.parentElement, e)
+    }
+    if (isIconActionsOpen && e.target.parentElement.className != "window-bar-action" && e.target.parentElement.className != "window-bar-icon-actions" && e.target.className != "window-icon") {
+        iconActions.style.display = "none"
     }
 })
 
