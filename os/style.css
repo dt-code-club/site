@@ -97,6 +97,15 @@ nav img {
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 4px 5px 7px 0px rgba(0, 0, 0, 0.356);
+    transition-property: width, height, top, left;
+}
+
+.window.maximized {
+    width: 100%;
+    height: calc(100vh - 52px);
+    top: 0px;
+    left: 0px;
+    border-radius: 0px;
 }
 
 .window-bar {
@@ -110,6 +119,19 @@ nav img {
     align-items: center;
     cursor: grab;
     position: relative;
+}
+
+.window.maximized>.window-bar {
+    cursor: pointer;
+    border-radius: 0px;
+}
+
+.window.maximized>.window-bar:active {
+    cursor: pointer;
+}
+
+.window.maximized>iframe {
+    border-radius: 0;
 }
 
 .window-bar:active {

@@ -30,30 +30,49 @@ setInterval(timeHandler(), 30000)
 var heldWindow
 var currentlyGrabbing = false
 var windowGrabOffset = []
+var windowPosition = []
 var mousePosition
 var isIconActionsOpen = false
 const iconActions = document.getElementById("icon-actions")
 const windowIcon = document.getElementById("window-icon")
+var isWindowMaximized
+var lastHeldWindow
+var canGrabWindow = true
 function windowGrabHandler(target, mouseInfo) {
-    currentlyGrabbing = true
-    heldWindow = target
-    let windowBoundingBox = heldWindow.getBoundingClientRect()
-    let windowPosition = [windowBoundingBox.x, windowBoundingBox.y]
-    mousePosition = [mouseInfo.clientX, mouseInfo.clientY]
-    windowGrabOffset = [mousePosition[0] - windowPosition[0], mousePosition[1] - windowPosition[1]]
-    console.log(windowGrabOffset)
+    if (canGrabWindow) {
+        currentlyGrabbing = true
+        heldWindow = target
+        lastHeldWindow = heldWindow
+        let windowBoundingBox = heldWindow.getBoundingClientRect()
+        let windowPosition = [windowBoundingBox.x, windowBoundingBox.y]
+        mousePosition = [mouseInfo.clientX, mouseInfo.clientY]
+        windowGrabOffset = [mousePosition[0] - windowPosition[0], mousePosition[1] - windowPosition[1]]
+        //console.log(windowGrabOffset)
+    }
 }
 function windowMoveHandler(mouseInfo) {
     if (currentlyGrabbing) {
         console.log(currentlyGrabbing)
         mousePosition = [mouseInfo.clientX, mouseInfo.clientY]
-        heldWindow.style.left = mousePosition[0] - windowGrabOffset[0] + "px"
-        heldWindow.style.top = mousePosition[1] - windowGrabOffset[1] + "px"
+        windowPosition = [mousePosition[0] - windowGrabOffset[0], mousePosition[1] - windowGrabOffset[1]]
+        heldWindow.style.left = windowPosition[0] + "px"
+        heldWindow.style.top = windowPosition[1] + "px"
     }
 }
 function closeWindowFromActionButton(button) {
     let window = button.parentElement.parentElement.parentElement
     window.style.display = "none"
+}
+function maximizeWindow() {
+    canGrabWindow = false
+    lastHeldWindow.style = ""
+    lastHeldWindow.classList.add("maximized")
+}
+function minimizeWindow() {
+    canGrabWindow = true
+    lastHeldWindow.classList.remove("maximized")
+    lastHeldWindow.style.left = windowPosition[0] + "px"
+    lastHeldWindow.style.top = windowPosition[1] + "px"
 }
 windowIcon.addEventListener("click", (e) => {
     isIconActionsOpen = true
