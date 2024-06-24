@@ -25,7 +25,7 @@ function timeHandler() {
     let dateString = `${month}/${day}/${year}`
     taskbarDateElem.innerText = dateString
 }
-setInterval(timeHandler(), 30000)
+setInterval(timeHandler(), 2000)
 
 var heldWindow
 var currentlyGrabbing = false
@@ -45,7 +45,6 @@ function windowGrabHandler(target, mouseInfo) {
         let windowPosition = [windowBoundingBox.x, windowBoundingBox.y]
         mousePosition = [mouseInfo.clientX, mouseInfo.clientY]
         windowGrabOffset = [mousePosition[0] - windowPosition[0], mousePosition[1] - windowPosition[1]]
-        //console.log(windowGrabOffset)
     }
 }
 function windowMoveHandler(mouseInfo) {
