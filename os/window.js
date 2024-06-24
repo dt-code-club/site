@@ -52,5 +52,15 @@ class OSWindow {
         this.windowTitle = this.windowElement.querySelector("#window-title")
 
         this.windowTitle.innerText = title
+
+        this.windowIcon.addEventListener("click", (e) => {
+            this.isIconActionsOpen = true
+            this.iconActions.style.display = ""
+        })
+        document.addEventListener("mousedown", (e) => {
+            if (this.isIconActionsOpen && e.target.parentElement.className != "window-bar-action" && e.target.parentElement.className != "window-bar-icon-actions" && e.target.className != "window-icon") {
+                this.iconActions.style.display = "none"
+            }
+        })
     }
 }

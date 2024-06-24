@@ -68,16 +68,9 @@ function minimizeWindow() {
     lastHeldWindow.style.left = windowPosition[0] + "px"
     lastHeldWindow.style.top = windowPosition[1] + "px"
 }
-windowIcon.addEventListener("click", (e) => {
-    isIconActionsOpen = true
-    iconActions.style.display = ""
-})
 document.addEventListener("mousedown", (e) => {
     if (e.target.parentElement.className == "window-bar") {
         windowGrabHandler(e.target.parentElement.parentElement, e)
-    }
-    if (isIconActionsOpen && e.target.parentElement.className != "window-bar-action" && e.target.parentElement.className != "window-bar-icon-actions" && e.target.className != "window-icon") {
-        iconActions.style.display = "none"
     }
 })
 
