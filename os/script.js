@@ -30,16 +30,14 @@ setInterval(timeHandler(), 30000)
 var heldWindow
 var currentlyGrabbing = false
 var windowGrabOffset = []
-var windowPosition = []
 var mousePosition
 var isIconActionsOpen = false
 const iconActions = document.getElementById("icon-actions")
 const windowIcon = document.getElementById("window-icon")
 var isWindowMaximized
 var lastHeldWindow
-var canGrabWindow = true
 function windowGrabHandler(target, mouseInfo) {
-    if (canGrabWindow) {
+    if (!isWindowMaximized) {
         currentlyGrabbing = true
         heldWindow = target
         lastHeldWindow = heldWindow
@@ -52,7 +50,6 @@ function windowGrabHandler(target, mouseInfo) {
 }
 function windowMoveHandler(mouseInfo) {
     if (currentlyGrabbing) {
-        console.log(currentlyGrabbing)
         mousePosition = [mouseInfo.clientX, mouseInfo.clientY]
         windowPosition = [mousePosition[0] - windowGrabOffset[0], mousePosition[1] - windowGrabOffset[1]]
         heldWindow.style.left = windowPosition[0] + "px"
@@ -64,12 +61,10 @@ function closeWindowFromActionButton(button) {
     window.style.display = "none"
 }
 function maximizeWindow() {
-    canGrabWindow = false
     lastHeldWindow.style = ""
     lastHeldWindow.classList.add("maximized")
 }
 function minimizeWindow() {
-    canGrabWindow = true
     lastHeldWindow.classList.remove("maximized")
     lastHeldWindow.style.left = windowPosition[0] + "px"
     lastHeldWindow.style.top = windowPosition[1] + "px"
