@@ -1,5 +1,4 @@
 const windowHTML = `
-    <div class="window">
         <div class="window-bar">
             <img class="window-icon" id="window-icon" draggable="false"
                 src="https://assets.hackclub.com/icon-rounded.svg">
@@ -29,10 +28,9 @@ const windowHTML = `
                     </div>
                 </div>
         </div>
-        <iframe src="https://dtcode.club"></iframe>
-    </div>`
+        <iframe src="https://dtcode.club"></iframe>`
 class OSWindow {
-    constructor(title = "Test", dimensions = [500, 500], maximized = false) {
+    constructor(title = "Test",windowsource,icon="./logo.png", dimensions = [500, 500], maximized = false) {
         this.windowPosition = []
         this.isIconActionsOpen = false
         this.isWindowMaximized = maximized
@@ -41,12 +39,16 @@ class OSWindow {
 
         this.windowElement = document.createElement("div")
         this.windowElement.innerHTML = windowHTML
+        this.windowElement.className = "window"
         this.windowElement.style.width = dimensions[0] + "px"
         this.windowElement.style.height = dimensions[1] + "px"
         this.windowElement = document.body.appendChild(this.windowElement)
 
+        this.frame = this.windowElement.querySelector("iframe")
+        this.frame.src = windowsource
         this.iconActions = this.windowElement.querySelector("#icon-actions")
         this.windowIcon = this.windowElement.querySelector("#window-icon")
+        this.windowIcon.src = icon
         this.windowTitle = this.windowElement.querySelector("#window-title")
 
         this.windowTitle.innerText = title

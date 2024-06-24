@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser</title>
+    <style>
+        .browser-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+            align-items: center;
+        }
+        iframe{
+            width: 150%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="browser-body">
+        <div class="search-info">
+            <img src="./ddg.svg">
+        </div>
+        <iframe src="https://duckduckgo.com/search.html" style="overflow:hidden;margin:0;padding:0;height:60px;"
+            frameborder="0">
+        </iframe>
+    </div>
+</body>
+
+</html>
