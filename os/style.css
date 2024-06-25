@@ -206,39 +206,78 @@ nav img {
     width: 25px;
 }
 
-.up-sensor{
-    width: 100%;
-    height: 5px;
+.sensor {
     position: absolute;
     z-index: 10004;
-    background-color: red;
-    top:0;
-    cursor: n-resize;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
-.down-sensor{
+
+.up.sensor {
     width: 100%;
     height: 5px;
-    position: absolute;
-    z-index: 10003;
-    background-color: blue;
-    bottom:0;
+    /*background-color: red;*/
+    top: 0;
+    cursor: n-resize;
+}
+
+.down.sensor {
+    width: 100%;
+    height: 5px;
+    /*background-color: blue;*/
+    bottom: 0;
     cursor: s-resize;
 }
-.left-sensor{
+
+.left.sensor {
     width: 5px;
     height: 100%;
-    position: absolute;
-    z-index: 10002;
-    background-color: green;
-    left:0;
+    /*background-color: green;*/
+    left: 0;
     cursor: w-resize;
 }
-.right-sensor{
+
+.right.sensor {
     width: 5px;
     height: 100%;
-    position: absolute;
-    z-index: 10001;
-    background-color: yellow;
-    right:0;
+    /*background-color: yellow;*/
+    right: 0;
     cursor: e-resize;
+}
+
+.ur.sensor {
+    width: 10px;
+    height: 10px;
+    /*background-color: magenta;*/
+    top: 0;
+    right: 0;
+    cursor: ne-resize;
+}
+
+.ul.sensor {
+    width: 10px;
+    height: 10px;
+    /*background-color: magenta;*/
+    top: 0;
+    left: 0;
+    cursor: nw-resize;
+}
+
+.dr.sensor {
+    width: 10px;
+    height: 10px;
+    /*background-color: magenta;*/
+    bottom: 0;
+    right: 0;
+    cursor: se-resize;
+}
+
+.dl.sensor {
+    width: 10px;
+    height: 10px;
+    /*background-color: magenta;*/
+    bottom: 0;
+    left: 0;
+    cursor: sw-resize;
 }

@@ -27,7 +27,7 @@ function timeHandler() {
 }
 setInterval(timeHandler(), 2000)
 
-var heldWindow
+var currentWindow
 var currentlyGrabbing = false
 var windowGrabOffset = []
 var mousePosition
@@ -35,13 +35,15 @@ var isIconActionsOpen = false
 const iconActions = document.getElementById("icon-actions")
 const windowIcon = document.getElementById("window-icon")
 var isWindowMaximized
-var lastHeldWindow
+var lastcurrentWindow
+var currentSensor
+var mouseDownStart = []
 function windowGrabHandler(target, mouseInfo) {
     if (!isWindowMaximized) {
         currentlyGrabbing = true
-        heldWindow = target
-        lastHeldWindow = heldWindow
-        let windowBoundingBox = heldWindow.getBoundingClientRect()
+        currentWindow = target
+        lastcurrentWindow = currentWindow
+        let windowBoundingBox = currentWindow.getBoundingClientRect()
         let windowPosition = [windowBoundingBox.x, windowBoundingBox.y]
         mousePosition = [mouseInfo.clientX, mouseInfo.clientY]
         windowGrabOffset = [mousePosition[0] - windowPosition[0], mousePosition[1] - windowPosition[1]]
@@ -51,31 +53,32 @@ function windowMoveHandler(mouseInfo) {
     if (currentlyGrabbing) {
         mousePosition = [mouseInfo.clientX, mouseInfo.clientY]
         windowPosition = [mousePosition[0] - windowGrabOffset[0], mousePosition[1] - windowGrabOffset[1]]
-        heldWindow.style.left = windowPosition[0] + "px"
-        heldWindow.style.top = windowPosition[1] + "px"
+        currentWindow.style.left = windowPosition[0] + "px"
+        currentWindow.style.top = windowPosition[1] + "px"
     }
 }
+
 function closeWindowFromActionButton(button) {
     let window = button.parentElement.parentElement.parentElement
     window.style.display = "none"
 }
-function maximizeWindow() {
-    lastHeldWindow.style = ""
-    lastHeldWindow.classList.add("maximized")
-}
-function minimizeWindow() {
-    lastHeldWindow.classList.remove("maximized")
-    lastHeldWindow.style.left = windowPosition[0] + "px"
-    lastHeldWindow.style.top = windowPosition[1] + "px"
-}
+
 document.addEventListener("mousedown", (e) => {
     if (e.target.parentElement.className == "window-bar") {
         windowGrabHandler(e.target.parentElement.parentElement, e)
+    }
+    if (e.target.classList.contains("sensor")) {
+        mouseDownStart = [e.clientX, e.clientY]
+        currentWindow = e.target.parentElement
     }
 })
 
 document.addEventListener("mouseup", () => {
     currentlyGrabbing = false;
-    heldWindow = null;
+    currentWindow = null;
 })
-document.addEventListener("mousemove", (e) => { windowMoveHandler(e) })
+document.addEventListener("mousemove", (e) => {
+    windowMoveHandler(e)
+})
+
+new OSWindow('DuckDuckGo', '/os/browser', './placeholder-icons/duckduckgo.svg', position = [123, 123])
