@@ -4,9 +4,9 @@ const windowHTML = `
                 src="https://assets.hackclub.com/icon-rounded.svg">
                 <span class="window-title" id="window-title">TITLE</span>
                 <div class="window-bar-action-buttons">
-                    <span class="action-button" style="background-color: #46dd67;" onclick="maximizeWindow()"></span>
-                    <span class="action-button" style="background-color: #eedc39;" onclick="minimizeWindow()"></span>
-                    <span class="action-button" style="background-color: #FF5050;"
+                    <span class="action-button" style="background-color: #46dd67;" onclick="maximizeWindow(this.parentElement.parentElement.parentElement)"></span>
+                    <span class="action-button" style="background-color: #eedc39;" onclick="minimizeWindow(this.parentElement.parentElement.parentElement)"></span>
+                    <span class="action-button" id="close-button" style="background-color: #FF5050;"
                         onclick="closeWindowFromActionButton(this)"></span>
                 </div>
                 <div class="window-bar-icon-actions" id="icon-actions" style="display: none;">
@@ -14,15 +14,15 @@ const windowHTML = `
                         <img src="https://www.svgrepo.com/show/357194/resize-diagonal.svg">
                             <span>Size</span>
                     </div>
-                    <div class="window-bar-action" onclick="minimizeWindow()">
+                    <div class="window-bar-action" onclick="minimizeWindow(this.parentElement.parentElement)">
                         <img src="https://www.svgrepo.com/show/342913/window-minimize.svg">
                             <span>Minimize</span>
                     </div>
-                    <div class="window-bar-action" onclick="maximizeWindow()">
+                    <div class="window-bar-action" onclick="maximizeWindow(this.parentElement.parentElement)">
                         <img src="https://www.svgrepo.com/show/446722/maximize.svg">
                             <span>Maximize</span>
                     </div>
-                    <div class="window-bar-action" onclick="closeWindowFromActionButton(this)">
+                    <div class="window-bar-action">
                         <img src="./close.svg">
                             <span>Close</span>
                     </div>
@@ -60,84 +60,5 @@ class OSWindow {
             this.windowElement.style.top = newTop
             this.windowElement.style.height = newHeight
         }
-    }
-    maximizeWindow() {
-        this.windowElement.style = ""
-        this.windowElement.classList.add("maximized")
-    }
-    minimizeWindow() {
-        this.windowElement.classList.remove("maximized")
-        this.windowElement.style.left = windowPosition[0] + "px"
-        this.windowElement.style.top = windowPosition[1] + "px"
-    }
-    constructor(title = "Test", windowsource, icon = "./logo.png", position = [0, 0], dimensions = [500, 500], maximized = false) {
-        this.windowPosition = []
-        this.isIconActionsOpen = false
-        this.isWindowMaximized = maximized
-        this.canGrabWindow = true
-
-
-        this.windowElement = document.createElement("div")
-        this.windowElement.innerHTML = windowHTML
-        this.windowElement.className = "window"
-
-        this.windowSize = dimensions
-
-        this.windowElement.style.width = this.windowSize[0] + "px"
-        this.windowElement.style.height = this.windowSize[1] + "px"
-
-        this.windowElement.style.left = position[0] + "px"
-        this.windowElement.style.top = position[1] + "px"
-        this.windowPosition = position
-
-        this.windowElement = document.body.appendChild(this.windowElement)
-
-        this.frame = this.windowElement.querySelector("iframe")
-        this.frame.src = windowsource
-        this.iconActions = this.windowElement.querySelector("#icon-actions")
-        this.windowIcon = this.windowElement.querySelector("#window-icon")
-        this.windowIcon.src = icon
-        this.windowTitle = this.windowElement.querySelector("#window-title")
-
-        this.windowTitle.innerText = title
-
-        this.windowIcon.addEventListener("click", (e) => {
-            this.isIconActionsOpen = true
-            this.iconActions.style.display = ""
-        })
-        this.resizeUp = false;
-        this.resizeDown = false;
-        this.resizeRight = false;
-        this.resizeLeft = false;
-
-        this.sensorClickStart = []
-        document.addEventListener("mousedown", (e) => {
-            if (this.isIconActionsOpen && e.target.parentElement.className != "window-bar-action" && e.target.parentElement.className != "window-bar-icon-actions" && e.target.className != "window-icon") {
-                this.iconActions.style.display = "none"
-            }
-        })
-        document.addEventListener("mouseup", (e) => {
-            this.resizeUp = false;
-            this.resizeDown = false;
-            this.resizeRight = false;
-            this.resizeLeft = false;
-            this.windowSize = [this.windowElement.style.width.slice(-2), this.windowElement.style.height.slice(-2)]
-            this.windowPosition = [this.windowElement.style.left.slice(-2), this.windowElement.style.top.slice(-2)]
-        })
-        document.addEventListener("mousemove", (e) => {
-            this.resizeHandler(e)
-        })
-        let directions = ["u", "d", "r", "l", "ur", "ul", "dr", "dl"];
-        directions.forEach(element => {
-            console.log(element)
-            let directionSensor = this.windowElement.querySelector(`#${element}`)
-            directionSensor.addEventListener("mousedown", (e) => {
-                this.sensorClickStart = [e.clientX, e.clientY]
-                this.resizeUp = directionSensor.id.includes("u")
-                this.resizeDown = directionSensor.id.includes("d")
-                this.resizeRight = directionSensor.id.includes("r")
-                this.resizeLeft = directionSensor.id.includes("l")
-            })
-        })
     }
 }
