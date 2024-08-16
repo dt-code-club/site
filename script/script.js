@@ -166,6 +166,12 @@ async function init() {
             } else {
                 await typeLine("Error: unrecognized or incomplete command line.\n", 2)
             }
+        } else if (command == "whoami") {
+            if (arguments.length > 0) {
+                await typeLine(username, 2)
+            } else {
+                await typeLine("Error: unrecognized or incomplete command line.\n", 2)
+            }
         } else if (command == "echo") {
             await typeLine(arguments.join(" "))
         } else {
