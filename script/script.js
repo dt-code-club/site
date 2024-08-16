@@ -124,7 +124,6 @@ async function init() {
     await sleepAsync(dev ? 0 : 200)
     canUserType = true;
     while (true) {
-        terminal.scrollTop = 10000
         let result = await input(`${username}@codeclub.local:~$ `)
         result = result.toLowerCase().split(" ")
         let command = result[0]
@@ -172,7 +171,7 @@ async function init() {
         } else {
             await typeLine(`"${command}" is not recognized as an internal or external command.\n`, 2);
         }
-        console.log(commandHistory)
+        terminal.scrollTop = terminal.scrollHeight
         commandIndex++;
     }
 }
