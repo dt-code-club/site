@@ -5,15 +5,43 @@
 
 * {
     font-family: "Outfit";
-    color: #00ff00;
+    color: white;
 }
 
 body {
-    background-color: #020202;
+    background-color: #597f5e;
     font-size: 1.5em;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
 }
 
-pre {
-    word-wrap: normal;
-    white-space: pre-wrap;
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+div>* {
+    margin: 0;
+    text-align: center;
+}
+
+img {
+    width: 90%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 4rem;
+    padding: 0 20px;
+}
+
+p {
+    font-size: 1.4rem;
+    padding: 0 20px;
 }
